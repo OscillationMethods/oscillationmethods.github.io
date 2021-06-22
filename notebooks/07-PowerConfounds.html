@@ -1,0 +1,995 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signal to Noise Ratio &#8212; Oscillation Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Separation of Rhythms" href="06-SpatialSeparation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Oscillation Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-OscillationPresence.html">
+   Oscillation Presence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-BandDefinitions.html">
+   Band Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-AperiodicActivity.html">
+   Aperiodic Activity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-TemporalFluctuations.html">
+   Temporal Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-WaveformShape.html">
+   Waveform Shape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-SpatialSeparation.html">
+   Separation of Rhythms
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Signal to Noise Ratio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/07-PowerConfounds.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/oscillationmethods//master?urlpath=tree/oscmethods/notebooks/07-PowerConfounds.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#issue">
+   Issue
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution">
+   Solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-work">
+   Related Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#settings">
+   Settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-time-series">
+   Simulate Time Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-oscillation-full-signal-across-snrs">
+     Plot the oscillation &amp; full signal, across SNRs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-the-high-and-low-snr-signals">
+     Compare the high and low SNR signals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-power-spectra">
+     Compute Power Spectra
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-instantaneous-measures">
+   Compute Instantaneous Measures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-instantaneous-measures">
+   Plot Instantaneous Measures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-measures">
+   Compare Measures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtered-traces">
+     Filtered Traces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phase-consistency">
+     Phase Consistency
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-locking-value">
+   Phase Locking Value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="signal-to-noise-ratio">
+<h1>Signal to Noise Ratio<a class="headerlink" href="#signal-to-noise-ratio" title="Permalink to this headline">¶</a></h1>
+<p>Topic: oscillations have variabile signal-to-noise ratio (SNR), which can complicate measurements.</p>
+<div class="section" id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
+<p>Many measures of interest are implicitly dependent on the signal strength, or, effectively, the relative power, of the oscillations under study. This can also be thought of as the signal-to-noise ratio of the data under study. If the power of the oscillation is low, then measures may be ‘noisy’, exhibiting high variability due a difficulty in resolving measurements.</p>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p>For analyses of interest, consider the required signal-to-noise ratio to get reliable estimates. Several strategies may be useful to optimize signal strength, including previously introduced strategies such as using individualized frequency ranges to more specifically detect oscillations, and applying burst detection to any analyze data with rhythms present. In some cases, an amplitude threshold may be useful to select data of a high-enough magnitude for subsequent analyses.</p>
+</div>
+<div class="section" id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1088/1361-6579/aa93a1">A robust statistical framework for instantaneous electroencephalogram phase and frequency estimation and analysis</a>, Sameni &amp; Seraj, 2017</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fooof.utils</span> <span class="kn">import</span> <span class="n">trim_spectrum</span>
+<span class="kn">from</span> <span class="nn">fooof.plts.spectra</span> <span class="kn">import</span> <span class="n">plot_spectra_shading</span>
+
+<span class="kn">from</span> <span class="nn">neurodsp.sim</span> <span class="kn">import</span> <span class="n">sim_oscillation</span><span class="p">,</span> <span class="n">sim_powerlaw</span>
+<span class="kn">from</span> <span class="nn">neurodsp.filt</span> <span class="kn">import</span> <span class="n">filter_signal</span>
+<span class="kn">from</span> <span class="nn">neurodsp.spectral</span> <span class="kn">import</span> <span class="n">compute_spectrum</span>
+<span class="kn">from</span> <span class="nn">neurodsp.timefrequency</span> <span class="kn">import</span> <span class="n">amp_by_time</span><span class="p">,</span> <span class="n">freq_by_time</span><span class="p">,</span> <span class="n">phase_by_time</span>
+<span class="kn">from</span> <span class="nn">neurodsp.utils</span> <span class="kn">import</span> <span class="n">create_times</span><span class="p">,</span> <span class="n">remove_nans</span><span class="p">,</span> <span class="n">set_random_seed</span>
+<span class="kn">from</span> <span class="nn">neurodsp.plts.time_series</span> <span class="kn">import</span> <span class="n">plot_time_series</span><span class="p">,</span> <span class="n">plot_instantaneous_measure</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add path and import custom code for the project</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">phase_locking_value</span>
+<span class="kn">from</span> <span class="nn">plts</span> <span class="kn">import</span> <span class="n">plot_estimates</span><span class="p">,</span> <span class="n">style_psd</span><span class="p">,</span> <span class="n">savefig</span>
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">ALPHA_COLOR</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;poster&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set random seed</span>
+<span class="n">set_random_seed</span><span class="p">(</span><span class="mi">808</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set functions to use for averaging and variance</span>
+<span class="n">avg_func</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span>
+<span class="n">var_func</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanvar</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define general simulation settings</span>
+<span class="n">n_seconds</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">create_times</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define parameters for the simulations</span>
+<span class="n">cf</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span>
+<span class="n">ap_filt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Define the relative powers to simulate</span>
+<span class="n">osc_powers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set indices for example high &amp; low power signals</span>
+<span class="n">HIGH_IND</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">LOW_IND</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># Set inds for subselecting</span>
+<span class="n">inds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot settings</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">]</span>
+<span class="n">plt_clear</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+
+<span class="c1"># Set color map for plotting the data</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Purples</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">osc_powers</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">tcols</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmap</span><span class="p">[</span><span class="n">ind</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set whether to save out figures</span>
+<span class="n">SAVE_FIG</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulate-time-series">
+<h2>Simulate Time Series<a class="headerlink" href="#simulate-time-series" title="Permalink to this headline">¶</a></h2>
+<p>For this example, we will simulate signals with oscillations of different relative powers.</p>
+<p>Note that the simulated data vary on relative power, but that the oscillations within each signal are themselves static and consistent.</p>
+<p>This means that any measured variability within the simulations necessarily stems from measurement issues.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the aperiodic component</span>
+<span class="n">ap</span> <span class="o">=</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">ap_filt</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate signals across a range of oscillation powers, reflecting different SNRs</span>
+<span class="n">oscs</span><span class="p">,</span> <span class="n">sigs</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">osc_pow</span> <span class="ow">in</span> <span class="n">osc_powers</span><span class="p">:</span>
+
+    <span class="c1"># Simulate and collect the oscillation component</span>
+    <span class="n">osc</span> <span class="o">=</span> <span class="n">sim_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="n">osc_pow</span><span class="p">)</span>
+    <span class="n">oscs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">osc</span><span class="p">)</span>
+
+    <span class="c1"># Simulate and collect the combined signal</span>
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">osc</span>
+    <span class="n">sigs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-oscillation-full-signal-across-snrs">
+<h3>Plot the oscillation &amp; full signal, across SNRs<a class="headerlink" href="#plot-the-oscillation-full-signal-across-snrs" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the simulated oscillations, across different amplitudes</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">oscs</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_16_0.png" src="../_images/07-PowerConfounds_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the simulated signals, when combined with aperiodic, across amplitudes</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sigs</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_17_0.png" src="../_images/07-PowerConfounds_17_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="compare-the-high-and-low-snr-signals">
+<h3>Compare the high and low SNR signals<a class="headerlink" href="#compare-the-high-and-low-snr-signals" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract a couple signals of interest</span>
+<span class="n">sig_high</span> <span class="o">=</span> <span class="n">sigs</span><span class="p">[</span><span class="n">HIGH_IND</span><span class="p">]</span>
+<span class="n">osc_high</span> <span class="o">=</span> <span class="n">oscs</span><span class="p">[</span><span class="n">HIGH_IND</span><span class="p">]</span>
+
+<span class="n">sig_low</span> <span class="o">=</span> <span class="n">sigs</span><span class="p">[</span><span class="n">LOW_IND</span><span class="p">]</span>
+<span class="n">osc_low</span> <span class="o">=</span> <span class="n">oscs</span><span class="p">[</span><span class="n">LOW_IND</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the time series of the high power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig_high</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+                 <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-ts-highpow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_20_0.png" src="../_images/07-PowerConfounds_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the time series of the low power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig_low</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> 
+                 <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-ts-lowpow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_21_0.png" src="../_images/07-PowerConfounds_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="compute-power-spectra">
+<h3>Compute Power Spectra<a class="headerlink" href="#compute-power-spectra" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate power spectra for each signal, across SNRs</span>
+<span class="n">pows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">sigs</span><span class="p">:</span>
+    <span class="n">freqs</span><span class="p">,</span> <span class="n">powers</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">fs</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
+    <span class="n">pows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">powers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a sub-selection of signals</span>
+<span class="n">plot_spectra_shading</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="p">[</span><span class="n">pows</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">],</span> 
+                     <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">line_colors</span><span class="o">=</span><span class="n">tcols</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>    
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-spectra_snrs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_24_0.png" src="../_images/07-PowerConfounds_24_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compute-instantaneous-measures">
+<h2>Compute Instantaneous Measures<a class="headerlink" href="#compute-instantaneous-measures" title="Permalink to this headline">¶</a></h2>
+<p>Next, let’s compute some instantaneous measures of interest on our signals.</p>
+<p>Our simulated data has an alpha oscillation, so we will examine instantaneous measures of the alpha range.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter each signal to the alpha range</span>
+<span class="n">sig_filt_high</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">sig_high</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+<span class="n">sig_filt_low</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">sig_low</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute instantaneous measures for each signal</span>
+<span class="n">pha_high</span> <span class="o">=</span> <span class="n">phase_by_time</span><span class="p">(</span><span class="n">sig_filt_high</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">amp_high</span> <span class="o">=</span> <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig_filt_high</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">fre_high</span> <span class="o">=</span> <span class="n">freq_by_time</span><span class="p">(</span><span class="n">sig_filt_high</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+
+<span class="n">pha_low</span> <span class="o">=</span> <span class="n">phase_by_time</span><span class="p">(</span><span class="n">sig_filt_low</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">amp_low</span> <span class="o">=</span> <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig_filt_low</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">fre_low</span> <span class="o">=</span> <span class="n">freq_by_time</span><span class="p">(</span><span class="n">sig_filt_low</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-instantaneous-measures">
+<h2>Plot Instantaneous Measures<a class="headerlink" href="#plot-instantaneous-measures" title="Permalink to this headline">¶</a></h2>
+<p>We can now plot our measures of interest, separately for the high and low power signals, and compare them.</p>
+<p>Recall that there is no temporal variability in the simulated oscillations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot instantaneous measures for the high power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig_high</span><span class="p">,</span> <span class="n">sig_filt_high</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+                 <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
+                 <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">pha_high</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                           <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">fre_high</span><span class="p">,</span> <span class="s1">&#39;frequency&#39;</span><span class="p">,</span>  <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+                           <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> 
+                           <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.075</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-measures-highpow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_29_0.png" src="../_images/07-PowerConfounds_29_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot instantaneous measures for the low power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig_low</span><span class="p">,</span> <span class="n">sig_filt_low</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">],</span> 
+                 <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">pha_low</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">],</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">fre_low</span><span class="p">,</span> <span class="s1">&#39;frequency&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> 
+                           <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.075</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-measures-lowpow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_30_0.png" src="../_images/07-PowerConfounds_30_0.png" />
+</div>
+</div>
+<p>As we can see in the above plots and comparisons, there is quite a lot of measured variability in the low power signal.</p>
+<p>This variability does not accurately reflect the underlying signal, but rather is a limitation of the estimation due to the low oscillation power.</p>
+</div>
+<div class="section" id="compare-measures">
+<h2>Compare Measures<a class="headerlink" href="#compare-measures" title="Permalink to this headline">¶</a></h2>
+<p>In the above, we visually compared our measures.</p>
+<p>Next lets more quantitatively compare them, by computing descriptive statistics on the computed measures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a buffer to ignore on the edges of the signal, for these comparisons</span>
+<span class="c1">#   This is just a way to exclude any potential edge artifacts, from the filtering</span>
+<span class="n">buff</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">fs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute descriptive statistics of the high power signal</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;High Power Signal:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Amp - mean: </span><span class="si">{:+8.4f}</span><span class="s1">, var: </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>\
+    <span class="n">avg_func</span><span class="p">(</span><span class="n">amp_high</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">]),</span> <span class="n">var_func</span><span class="p">(</span><span class="n">amp_high</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Fre - mean: </span><span class="si">{:+8.4f}</span><span class="s1">, var: </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>\
+    <span class="n">avg_func</span><span class="p">(</span><span class="n">fre_high</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">]),</span> <span class="n">var_func</span><span class="p">(</span><span class="n">fre_high</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">])))</span>
+<span class="c1"># Compute descriptive statistics of the low power signal</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Low Power Signal:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Amp - mean: </span><span class="si">{:+8.4f}</span><span class="s1">, var: </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>\
+    <span class="n">avg_func</span><span class="p">(</span><span class="n">amp_low</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">]),</span> <span class="n">var_func</span><span class="p">(</span><span class="n">amp_low</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Fre - mean: </span><span class="si">{:+8.4f}</span><span class="s1">, var: </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>\
+    <span class="n">avg_func</span><span class="p">(</span><span class="n">fre_low</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">]),</span> <span class="n">var_func</span><span class="p">(</span><span class="n">fre_low</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>High Power Signal:
+  Amp - mean:  +1.0082, var:   0.0751
+  Fre - mean:  +9.9995, var:   0.2774
+Low Power Signal:
+  Amp - mean:  +0.4952, var:   0.0530
+  Fre - mean:  +9.8723, var:   2.9169
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above measures, we see increased variability of the estimated measures in the low power situtation, in particular for frequency.</p>
+<p>Note that the above analysis would not really make sense for phase, as it is a circular variable.</p>
+<p>Therefore, we can compare that one a little differently. For a consistent oscillation, the unwrapped phase should show consistent variation, which can be calculated as the differences between measured (unwrapped) phase values.</p>
+<p>For a more relevant measure for phase, let’s check it’s monotonicity. The unwrapped phase of ongoing oscillations should be monotonically increasing. However, in some cases, we can see ‘phase slips’, or a negative deflection of the measured (unwrapped) phase. The phase monotonicity, or lack thereof, is a measure of phase variability, whereby (for this case) higher values are more accurate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute unwrapped phase diffs for the high power signal</span>
+<span class="n">pha_high_uw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">remove_nans</span><span class="p">(</span><span class="n">pha_high</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">])[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pha_high_diffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">pha_high_uw</span><span class="p">)</span>
+
+<span class="c1"># Compute unwrapped phase diffs for the low power signal</span>
+<span class="n">pha_low_uw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">remove_nans</span><span class="p">(</span><span class="n">pha_low</span><span class="p">[</span><span class="n">buff</span><span class="p">:</span><span class="o">-</span><span class="n">buff</span><span class="p">])[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pha_low_diffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">pha_low_uw</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comptute and compare the measured phase monotonicity of the signals</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;High Power - Phase monotonicity:  </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>\
+    <span class="nb">sum</span><span class="p">(</span><span class="n">pha_high_diffs</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pha_high_diffs</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Low Power  - Phase monotonicity:  </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>\
+    <span class="nb">sum</span><span class="p">(</span><span class="n">pha_low_diffs</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pha_low_diffs</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>High Power - Phase monotonicity:    1.0000
+Low Power  - Phase monotonicity:    0.9980
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="filtered-traces">
+<h3>Filtered Traces<a class="headerlink" href="#filtered-traces" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter and compute instantaneous phase of simulated signals</span>
+<span class="n">filts</span><span class="p">,</span> <span class="n">phas</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">sigs</span><span class="p">:</span>
+    <span class="n">filt</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">remove_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">filts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filt</span><span class="p">)</span>    
+    <span class="n">phas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phase_by_time</span><span class="p">(</span><span class="n">filt</span><span class="p">,</span> <span class="n">fs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the filtered traces for sub-selected signals</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">filts</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="n">tcols</span><span class="p">,</span>
+                 <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-filters_snrs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_41_0.png" src="../_images/07-PowerConfounds_41_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot instantaneous phase for sub-selected signals</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="p">):</span>
+    <span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">phas</span><span class="p">[</span><span class="n">inds</span><span class="p">[</span><span class="n">ind</span><span class="p">]],</span> <span class="s1">&#39;phase&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+                               <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mf">7.6</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">,</span> 
+                               <span class="n">colors</span><span class="o">=</span><span class="n">tcols</span><span class="p">[</span><span class="n">ind</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-phases_snrs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/tom/opt/anaconda3/lib/python3.8/site-packages/neurodsp/plts/style.py:101: UserWarning: Tight layout not applied. tight_layout cannot make axes height small enough to accommodate all axes decorations
+  plt.tight_layout()
+</pre></div>
+</div>
+<img alt="../_images/07-PowerConfounds_42_1.png" src="../_images/07-PowerConfounds_42_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot filtered versio of the high power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">osc_high</span><span class="p">,</span> <span class="n">sig_filt_high</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+                 <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">,</span> 
+                 <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-tsfilt_high&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_43_0.png" src="../_images/07-PowerConfounds_43_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot filtered version of the low power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">osc_low</span><span class="p">,</span> <span class="n">sig_filt_low</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
+                 <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">,</span> 
+                 <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-tsfilt_low&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_44_0.png" src="../_images/07-PowerConfounds_44_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="phase-consistency">
+<h3>Phase Consistency<a class="headerlink" href="#phase-consistency" title="Permalink to this headline">¶</a></h3>
+<p>Another way of looking at SNR is the consistency of estimations across multiple resamples.</p>
+<p>In this next analysis, we will resample multiple estimates of the high and low SNR signals, re-generating the aperiodic component that we add to the signal.</p>
+<p>Note that each sample uses the same oscillatory component, and therefore should have the same estimated instantaneous phase. Any variation across samples comes from estimation noise due to SNR.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate multiple resamples of high and low SNR signals</span>
+<span class="n">n_sims</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">phs_high</span><span class="p">,</span> <span class="n">phs_low</span>  <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_sims</span><span class="p">):</span>
+
+    <span class="n">ap</span> <span class="o">=</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">ap_filt</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">phs_high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phase_by_time</span><span class="p">(</span><span class="n">osc_high</span> <span class="o">+</span> <span class="n">ap</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">))</span>
+    <span class="n">phs_low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phase_by_time</span><span class="p">(</span><span class="n">osc_low</span> <span class="o">+</span> <span class="n">ap</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">))</span>
+
+<span class="n">phs_high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">phs_high</span><span class="p">)</span>
+<span class="n">phs_low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">phs_low</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the instantaneous phase of multiple iterations of high power signals</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">phs_high</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Phase Consistency - High SNR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_47_0.png" src="../_images/07-PowerConfounds_47_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the instantaneous phase of multiple iterations of low power signals</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">phs_low</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Phase Consistency - Low SNR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_48_0.png" src="../_images/07-PowerConfounds_48_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the true phase values from the high powered oscillation</span>
+<span class="n">true_phase</span> <span class="o">=</span> <span class="n">phase_by_time</span><span class="p">(</span><span class="n">osc_high</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the shading for the phase estimation</span>
+<span class="n">shd_high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">phs_high</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">shd_low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">phs_low</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/tom/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1666: RuntimeWarning: Degrees of freedom &lt;= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the distribution of estimated phase values for the high power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">))</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">true_phase</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">],</span>
+                           <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">true_phase</span><span class="o">-</span><span class="n">shd_high</span><span class="p">,</span> <span class="n">true_phase</span><span class="o">+</span><span class="n">shd_high</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-pha_low&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_51_0.png" src="../_images/07-PowerConfounds_51_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the distribution of estimated phase values for the low power signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">))</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">true_phase</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">],</span> 
+                           <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_clear</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">true_phase</span><span class="o">-</span><span class="n">shd_low</span><span class="p">,</span> <span class="n">true_phase</span><span class="o">+</span><span class="n">shd_low</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-pha_high&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_52_0.png" src="../_images/07-PowerConfounds_52_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="phase-locking-value">
+<h2>Phase Locking Value<a class="headerlink" href="#phase-locking-value" title="Permalink to this headline">¶</a></h2>
+<p>Finally, let’s compare the phase locking value across the signals.</p>
+<p>Recall that all the oscillations have the same time course, and should therefore have equal phase locking.</p>
+<p>Differences in measured phase value therefore stem from different in SNR.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the phase locking values across signals</span>
+<span class="n">plvs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pha_base</span> <span class="o">=</span> <span class="n">phas</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">pha_comp</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">phas</span><span class="p">[:]):</span>
+    <span class="n">plvs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phase_locking_value</span><span class="p">(</span><span class="n">pha_base</span><span class="p">,</span> <span class="n">pha_comp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot estimated PLV across oscillation strengths</span>
+<span class="n">plot_estimates</span><span class="p">(</span><span class="n">osc_powers</span><span class="p">,</span> <span class="n">plvs</span><span class="p">,</span> <span class="n">inds</span><span class="p">,</span> <span class="n">tcols</span><span class="p">,</span>
+               <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.52</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;07-plvs_snrs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07-PowerConfounds_55_0.png" src="../_images/07-PowerConfounds_55_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Neural signals can have different amounts of power of oscillatory components, creating different levels of signal-to-noise ratio, with respect to analyzing the oscillatory components of data. These differences in SNR can lead to differences in the estimation accurary and reliabilty of measures of interest.</p>
+<p>SNR should always be considered whenever estimating measures of interest, in order to determine if there is adequate signal power to adequately estimate the measure of interest, and whether differences or changes in SNR could influence any results.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="06-SpatialSeparation.html" title="previous page">Separation of Rhythms</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue, Natalie Schaworonkow, Bradley Voytek<br/>
+        
+            &copy; Copyright 2021-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; Oscillation Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Oscillation Presence" href="01-OscillationPresence.html" />
+    <link rel="prev" title="Hello World" href="../docs/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Oscillation Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-OscillationPresence.html">
+   Oscillation Presence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-BandDefinitions.html">
+   Band Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-AperiodicActivity.html">
+   Aperiodic Activity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-TemporalFluctuations.html">
+   Temporal Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-WaveformShape.html">
+   Waveform Shape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-SpatialSeparation.html">
+   Separation of Rhythms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-PowerConfounds.html">
+   Signal to Noise Ratio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/00-Introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/oscillationmethods//master?urlpath=tree/oscmethods/notebooks/00-Introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organization-of-the-project">
+   Organization of the Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulations">
+     Simulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-tools">
+     Analysis Tools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This project is an overview of <em>methodological considerations</em> for measuring and investigating neural oscillations.</p>
+<p>This project is broadly a review of methodological topics, and largely focuses on relationships between data properties and methods assumptions.</p>
+<p>The project is organized into seven key topics.</p>
+<p>Each topic includes a description of the issue, example demonstrations, and notes on how to avoid the issue. Each topic was chosen to reflect a general considerations that is broadly relevant to at least many investigations of neural oscillations. This project aims to collect together discussion of these considerations, though many of these topics have been been discussed in the literature before, and we also link out to other work that has highlighted, demonstrated, and discussed the topic at hand.</p>
+<div class="section" id="organization-of-the-project">
+<h2>Organization of the Project<a class="headerlink" href="#organization-of-the-project" title="Permalink to this headline">¶</a></h2>
+<p>Each topic is covered in a dedicated notebook, that introduces the problem and demonstrates some examples.</p>
+<p>To do so, we use simulated data and common analysis tools to explore and demonstrate potential methodological limitations.</p>
+<p>The methodological considerations covered in this project are:</p>
+<ul class="simple">
+<li><p>#1) detecting oscillations</p></li>
+<li><p>#2) band definitions</p></li>
+<li><p>#3) aperiodic activity</p></li>
+<li><p>#4) temporal variability</p></li>
+<li><p>#5) waveform shape</p></li>
+<li><p>#6) overlapping sources</p></li>
+<li><p>#7) signal-to-noise ratio</p></li>
+</ul>
+<div class="section" id="simulations">
+<h3>Simulations<a class="headerlink" href="#simulations" title="Permalink to this headline">¶</a></h3>
+<p>Each topic is demonstrated using simulated data. We use simulated data as it allows for precise control over properties of the data, and the capacity to isolate and demonstrate individual features of the data, and topics of interest.</p>
+<p>The simulations take the approach of creating neural time series as combinations of periodic and aperiodic activity.</p>
+<p>All simulations are simulated are created with the
+<a class="reference external" href="https://neurodsp-tools.github.io/">neurodsp</a> toolbox.</p>
+</div>
+<div class="section" id="analysis-tools">
+<h3>Analysis Tools<a class="headerlink" href="#analysis-tools" title="Permalink to this headline">¶</a></h3>
+<p>Throughout this project, we use open-source Python toolboxes, including common modules from the scientific Python ecosystem, including numpy, scipy, matplotlib, seaborn, etc.</p>
+<p>Simulations &amp; analyses are done with NeuroDSP, a Python tool for digital signal processing of neural time series:</p>
+<ul class="simple">
+<li><p>Neural Digital Signal Processing (NeuroDSP)</p>
+<ul>
+<li><p>Tool Link: <a class="reference external" href="https://neurodsp-tools.github.io/">https://neurodsp-tools.github.io/</a></p></li>
+<li><p>Reference paper: <a class="reference external" href="https://doi.org/10.21105/joss.01272">https://doi.org/10.21105/joss.01272</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Some of the analyses additional use specialized tools for particular analyses:</p>
+<ul class="simple">
+<li><p>Parameterizing Neural Power Spectra</p>
+<ul>
+<li><p>Tool link: <a class="reference external" href="https://fooof-tools.github.io/">https://fooof-tools.github.io/</a></p></li>
+<li><p>Reference paper: <a class="reference external" href="https://doi.org/10.1101/299859">https://doi.org/10.1101/299859</a></p></li>
+</ul>
+</li>
+<li><p>Cycle-by-Cycle Analyses (ByCycle)</p>
+<ul>
+<li><p>Tool link: <a class="reference external" href="https://bycycle-tools.github.io/">https://bycycle-tools.github.io/</a></p></li>
+<li><p>Reference paper: <a class="reference external" href="https://doi.org/10.1152/jn.00273.2019">https://doi.org/10.1152/jn.00273.2019</a></p></li>
+</ul>
+</li>
+</ul>
+<p>All of the code for this project is openly available in this repository, and the aforementioned tools are all open-source and readily available.</p>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>This project covers methodological considerations for studying neural oscillations.</p>
+<p>To continue through this project, check through the subsequent notebooks that describe each of the topics.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../docs/index.html" title="previous page">Hello World</a>
+    <a class='right-next' id="next-link" href="01-OscillationPresence.html" title="next page">Oscillation Presence</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue, Natalie Schaworonkow, Bradley Voytek<br/>
+        
+            &copy; Copyright 2021-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

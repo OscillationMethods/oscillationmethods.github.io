@@ -1,0 +1,1091 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temporal Fluctuations &#8212; Oscillation Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Waveform Shape" href="05-WaveformShape.html" />
+    <link rel="prev" title="Aperiodic Activity" href="03-AperiodicActivity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Oscillation Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-OscillationPresence.html">
+   Oscillation Presence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-BandDefinitions.html">
+   Band Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-AperiodicActivity.html">
+   Aperiodic Activity
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Temporal Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-WaveformShape.html">
+   Waveform Shape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-SpatialSeparation.html">
+   Separation of Rhythms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-PowerConfounds.html">
+   Signal to Noise Ratio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/04-TemporalFluctuations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/oscillationmethods//master?urlpath=tree/oscmethods/notebooks/04-TemporalFluctuations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#issue">
+   Issue
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution">
+   Solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-work">
+   Related Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#settings">
+   Settings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulate-time-series">
+     Simulate Time Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-the-power-spectra">
+     Compare the Power Spectra
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-burst-detection">
+     Apply Burst Detection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-oscillatory-power">
+     Compare Oscillatory Power
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aspects-of-temporal-variability">
+   Aspects of Temporal Variability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#short-vs-long-bursts">
+     Short vs Long Bursts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#burst-occurence">
+     Burst Occurence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-burst-amplitude">
+     Change Burst Amplitude
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-resolved-measures">
+   Time-Resolved Measures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bursts-across-time">
+     Bursts Across Time
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusions">
+     Conclusions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="temporal-fluctuations">
+<h1>Temporal Fluctuations<a class="headerlink" href="#temporal-fluctuations" title="Permalink to this headline">¶</a></h1>
+<p>Neural oscillations are temporally variable, which can impact measures and interpretations.</p>
+<div class="section" id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
+<p>Neural oscillations are often variable through time (bursty).</p>
+<p>This can exhibit can exhibit as power differences, if temporal variability is not considered and addressed.</p>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p>If and when oscillations are or may be bursty, burst detection can be used to identify times in which the oscillation is present.</p>
+<p>This can be used to restrict analyses to segments in which the oscillation is present, upon which measures of interest can be computed.</p>
+</div>
+<div class="section" id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<p>The following papers include discussion of this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.7554/eLife.29086.001">The rate of transient beta frequency events predicts behavior across tasks and species</a>, Shin et al, 2017</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1016/j.tics.2020.07.004">Dissecting Transient Burst Events</a>, Zich et al, 2020</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">spectrogram</span>
+
+<span class="kn">from</span> <span class="nn">fooof.plts.spectra</span> <span class="kn">import</span> <span class="n">plot_spectra_shading</span>
+<span class="kn">from</span> <span class="nn">fooof.utils</span> <span class="kn">import</span> <span class="n">trim_spectrum</span>
+
+<span class="kn">from</span> <span class="nn">neurodsp.sim</span> <span class="kn">import</span> <span class="n">sim_powerlaw</span><span class="p">,</span> <span class="n">sim_bursty_oscillation</span>
+<span class="kn">from</span> <span class="nn">neurodsp.spectral</span> <span class="kn">import</span> <span class="n">compute_spectrum</span>
+<span class="kn">from</span> <span class="nn">neurodsp.timefrequency</span> <span class="kn">import</span> <span class="n">amp_by_time</span>
+<span class="kn">from</span> <span class="nn">neurodsp.burst</span> <span class="kn">import</span> <span class="n">detect_bursts_dual_threshold</span>
+<span class="kn">from</span> <span class="nn">neurodsp.utils</span> <span class="kn">import</span> <span class="n">create_times</span><span class="p">,</span> <span class="n">set_random_seed</span>
+<span class="kn">from</span> <span class="nn">neurodsp.plts.time_series</span> <span class="kn">import</span> <span class="n">plot_time_series</span><span class="p">,</span> <span class="n">plot_bursts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add path and import custom code for the project</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">make_osc_def</span>
+<span class="kn">from</span> <span class="nn">plts</span> <span class="kn">import</span> <span class="n">plot_bar</span><span class="p">,</span> <span class="n">plot_spectrogram</span><span class="p">,</span> <span class="n">style_psd</span><span class="p">,</span> <span class="n">savefig</span>
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">COND_COLORS</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;poster&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set random seed</span>
+<span class="n">set_random_seed</span><span class="p">(</span><span class="mi">808</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define general simulation settings</span>
+<span class="n">n_seconds</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">create_times</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the function for averaging</span>
+<span class="n">avg_func</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define parameters for the simulations</span>
+<span class="n">cf</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="n">ap_filt</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Define params for probabilistiic bursting</span>
+<span class="n">enter_lo</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">leave_lo</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">enter_hi</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">leave_hi</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analysis settings</span>
+<span class="n">nperseg</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">fs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define frequency ranges of interest</span>
+<span class="n">psd_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some plot settings</span>
+<span class="n">plt_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;xlabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ylabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;low-burst&#39;</span><span class="p">,</span> <span class="s1">&#39;high-burst&#39;</span><span class="p">]</span>
+<span class="n">leg_size</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="n">C1</span><span class="p">,</span> <span class="n">C2</span> <span class="o">=</span> <span class="n">COND_COLORS</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set whether to save out figures</span>
+<span class="n">SAVE_FIG</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="simulate-time-series">
+<h3>Simulate Time Series<a class="headerlink" href="#simulate-time-series" title="Permalink to this headline">¶</a></h3>
+<p>For this comparison, we will simulate and compare two example signals.</p>
+<p>Each time series will contain a bursty alpha oscillation, but the two signals will vary in their burst probability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate the aperiodic activity to use for these simulations</span>
+<span class="n">ap</span> <span class="o">=</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">ap_filt</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c1"># Simulate burst oscillation components, with low and high burst probabilities</span>
+<span class="n">burst_lo</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;prob&#39;</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+                                  <span class="n">burst_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;enter_burst&#39;</span> <span class="p">:</span> <span class="n">enter_lo</span><span class="p">,</span> <span class="s1">&#39;leave_burst&#39;</span> <span class="p">:</span> <span class="n">leave_lo</span><span class="p">})</span>
+<span class="n">burst_hi</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;prob&#39;</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> 
+                                  <span class="n">burst_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;enter_burst&#39;</span> <span class="p">:</span> <span class="n">enter_hi</span><span class="p">,</span> <span class="s1">&#39;leave_burst&#39;</span> <span class="p">:</span> <span class="n">leave_hi</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combine the aperiodic and periodic components of the simulations</span>
+<span class="n">sig_lo</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">burst_lo</span>
+<span class="n">sig_hi</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">burst_hi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the low burst probability signal</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig_lo</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">C1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-burst_high&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_16_0.png" src="../_images/04-TemporalFluctuations_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the high burst probability signal</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig_hi</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">C2</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-burst_low&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_17_0.png" src="../_images/04-TemporalFluctuations_17_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="compare-the-power-spectra">
+<h3>Compare the Power Spectra<a class="headerlink" href="#compare-the-power-spectra" title="Permalink to this headline">¶</a></h3>
+<p>Next, let’s compare the power spectra of the two example signals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute power spectra of each signal</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">powers_lo</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig_lo</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">powers_hi</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig_hi</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the power spectra, comparing between signals</span>
+<span class="n">plot_spectra_shading</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="p">[</span><span class="n">powers_lo</span><span class="p">,</span> <span class="n">powers_hi</span><span class="p">],</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span>
+                     <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Low Burst&#39;</span><span class="p">,</span> <span class="s1">&#39;High Burst&#39;</span><span class="p">],</span>
+                     <span class="n">log_freqs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                     <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">line_colors</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">leg_size</span><span class="p">})</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-burst_psd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_20_0.png" src="../_images/04-TemporalFluctuations_20_0.png" />
+</div>
+</div>
+<p>Based simply on the power spectra, it looks like our two signals have a clear difference in alpha power.</p>
+</div>
+<div class="section" id="apply-burst-detection">
+<h3>Apply Burst Detection<a class="headerlink" href="#apply-burst-detection" title="Permalink to this headline">¶</a></h3>
+<p>By construction, we know our simulated signals have temporal variability in their oscillations.</p>
+<p>To dig into this, let’s apply burst detection to try and measure when, in time, the oscillations are present.</p>
+<p>Note: here we are using burst detection using the
+<a class="reference external" href="https://neurodsp-tools.github.io/neurodsp/auto_tutorials/burst/plot_BurstDetection.html">dual-amplitude</a>
+algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply burst detection to the low burst probability signal</span>
+<span class="n">bursting_lo</span> <span class="o">=</span> <span class="n">detect_bursts_dual_threshold</span><span class="p">(</span><span class="n">sig_lo</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a segment of burst detection on the first signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
+<span class="n">plot_bursts</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig_lo</span><span class="p">,</span> <span class="n">bursting_lo</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">C1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-burst_det1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_24_0.png" src="../_images/04-TemporalFluctuations_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply burst detection to the high burst probability signal</span>
+<span class="n">bursting_hi</span> <span class="o">=</span> <span class="n">detect_bursts_dual_threshold</span><span class="p">(</span><span class="n">sig_hi</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a segment of burst detection on the first signal</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
+<span class="n">plot_bursts</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig_hi</span><span class="p">,</span> <span class="n">bursting_hi</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]);</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="o">*</span><span class="n">xlim</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">C2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-burst_det2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_26_0.png" src="../_images/04-TemporalFluctuations_26_0.png" />
+</div>
+</div>
+<p>In the above we can see, as expected the two signals differ in the prominence of the bursting.</p>
+</div>
+<div class="section" id="compare-oscillatory-power">
+<h3>Compare Oscillatory Power<a class="headerlink" href="#compare-oscillatory-power" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have identified the bursts, we can compare the power of the oscillation across the whole signal, to the power of the oscillations during moments of bursting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate instantaneous amplitude of each signal</span>
+<span class="n">amp_lo</span> <span class="o">=</span> <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig_lo</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+<span class="n">amp_hi</span> <span class="o">=</span> <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig_hi</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the difference in power, across the whole signal</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Low  Burst Signal - total power : </span><span class="si">{:1.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_lo</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;High Burst Signal - total power : </span><span class="si">{:1.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_hi</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Low  Burst Signal - total power : 0.55
+High Burst Signal - total power : 0.94
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the comparison of total power between signals</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">amp_lo</span><span class="p">,</span> <span class="n">amp_hi</span><span class="p">,</span> <span class="p">[],</span> <span class="n">color</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-bar_oscpow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_31_0.png" src="../_images/04-TemporalFluctuations_31_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the difference in power, for identified burst segments</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Low  Burst Signal - burst power : </span><span class="si">{:1.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_hi</span><span class="p">[</span><span class="n">bursting_lo</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;High Burst Signal - burst power : </span><span class="si">{:1.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_hi</span><span class="p">[</span><span class="n">bursting_hi</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Low  Burst Signal - burst power : 1.03
+High Burst Signal - burst power : 1.21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the comparison of burst power between signals</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">amp_lo</span><span class="p">[</span><span class="n">bursting_lo</span><span class="p">],</span> <span class="n">amp_hi</span><span class="p">[</span><span class="n">bursting_hi</span><span class="p">],</span> <span class="p">[],</span>
+         <span class="n">color</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-bar_burstpow&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_33_0.png" src="../_images/04-TemporalFluctuations_33_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aspects-of-temporal-variability">
+<h2>Aspects of Temporal Variability<a class="headerlink" href="#aspects-of-temporal-variability" title="Permalink to this headline">¶</a></h2>
+<p>As we’ve seen above, oscillations can be temporally variable, impacting power measures.</p>
+<p>In the following, we will examine 3 ways in which bursts can vary:</p>
+<ul class="simple">
+<li><p>burst duration (short vs. long bursts)</p></li>
+<li><p>burst occurence (common vs. rare bursts)</p></li>
+<li><p>burst amplitude (the amplitude of the oscillation within the bursts)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Settings for this series of plots: xlims</span>
+<span class="n">st</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="n">st</span><span class="p">,</span> <span class="n">st</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="short-vs-long-bursts">
+<h3>Short vs Long Bursts<a class="headerlink" href="#short-vs-long-bursts" title="Permalink to this headline">¶</a></h3>
+<p>Here, we will simulate and compare bursts with a short vs. long burst length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make short bursts</span>
+<span class="n">burst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_cycles_burst&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n_cycles_off&#39;</span> <span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="n">bursts</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;durations&#39;</span><span class="p">,</span> <span class="n">burst_params</span><span class="p">)</span>
+<span class="n">short_bursts</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">bursts</span>
+
+<span class="c1"># Make long bursts</span>
+<span class="n">burst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_cycles_burst&#39;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n_cycles_off&#39;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">bursts</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;durations&#39;</span><span class="p">,</span> <span class="n">burst_params</span><span class="p">)</span>
+<span class="n">long_bursts</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">bursts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the time series comparing bursts of different durations</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">short_bursts</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> 
+                 <span class="n">colors</span><span class="o">=</span><span class="n">C1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-ts_burst_duration_low&#39;</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">long_bursts</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> 
+                 <span class="n">colors</span><span class="o">=</span><span class="n">C2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-ts_burst_duration_high&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_38_0.png" src="../_images/04-TemporalFluctuations_38_0.png" />
+<img alt="../_images/04-TemporalFluctuations_38_1.png" src="../_images/04-TemporalFluctuations_38_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute power spectra of burst with different burst durations</span>
+<span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">short_bursts</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+<span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">long_bursts</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot power spectra comparing bursts with different durations</span>
+<span class="n">plot_spectra_shading</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="p">[</span><span class="n">powers1</span><span class="p">,</span> <span class="n">powers2</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+                     <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Short Duration&#39;</span><span class="p">,</span> <span class="s1">&#39;Long Duration&#39;</span><span class="p">],</span>
+                     <span class="n">log_freqs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                     <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">line_colors</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">leg_size</span><span class="p">})</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-psd_burst_duration&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_40_0.png" src="../_images/04-TemporalFluctuations_40_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="burst-occurence">
+<h3>Burst Occurence<a class="headerlink" href="#burst-occurence" title="Permalink to this headline">¶</a></h3>
+<p>Here, we will simulate and compare bursts with a low vs. high occurence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make low occurence bursts</span>
+<span class="n">burst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_cycles_burst&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n_cycles_off&#39;</span> <span class="p">:</span> <span class="mi">17</span><span class="p">}</span>
+<span class="n">bursts</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;durations&#39;</span><span class="p">,</span> <span class="n">burst_params</span><span class="p">)</span>
+<span class="n">low_oc_bursts</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">bursts</span>
+
+<span class="c1"># Make high occurence bursts</span>
+<span class="n">burst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_cycles_burst&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n_cycles_off&#39;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+<span class="n">bursts</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;durations&#39;</span><span class="p">,</span> <span class="n">burst_params</span><span class="p">)</span>
+<span class="n">high_oc_bursts</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">bursts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the time series comparing bursts of different occurences</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">low_oc_bursts</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> 
+                 <span class="n">colors</span><span class="o">=</span><span class="n">C1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-ts_burst_occurence_low&#39;</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">high_oc_bursts</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> 
+                 <span class="n">colors</span><span class="o">=</span><span class="n">C2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-ts_burst_occurence_high&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_43_0.png" src="../_images/04-TemporalFluctuations_43_0.png" />
+<img alt="../_images/04-TemporalFluctuations_43_1.png" src="../_images/04-TemporalFluctuations_43_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute power spectra of burst with different burst occurence</span>
+<span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">low_oc_bursts</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+<span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">high_oc_bursts</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot power spectra comparing bursts with different occurences</span>
+<span class="n">plot_spectra_shading</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="p">[</span><span class="n">powers1</span><span class="p">,</span> <span class="n">powers2</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+                     <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Low Ocurrence&#39;</span><span class="p">,</span> <span class="s1">&#39;High Occurence&#39;</span><span class="p">],</span>
+                     <span class="n">log_freqs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                     <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">line_colors</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">leg_size</span><span class="p">})</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-psd_burst_occurence&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_45_0.png" src="../_images/04-TemporalFluctuations_45_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="change-burst-amplitude">
+<h3>Change Burst Amplitude<a class="headerlink" href="#change-burst-amplitude" title="Permalink to this headline">¶</a></h3>
+<p>Here, we will simulate and compare bursts with a low vs. high burst amplitude.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define burst parameters for bursts with changes in amplitude</span>
+<span class="n">burst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_cycles_burst&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n_cycles_off&#39;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+
+<span class="c1"># Make low amplitude bursts</span>
+<span class="n">bursts</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;durations&#39;</span><span class="p">,</span> <span class="n">burst_params</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
+<span class="n">low_amp_bursts</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">bursts</span>
+
+<span class="c1"># Make high amplitude bursts</span>
+<span class="n">bursts</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;durations&#39;</span><span class="p">,</span> <span class="n">burst_params</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">2.25</span><span class="p">)</span>
+<span class="n">high_amp_bursts</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">bursts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the time series comparing bursts of different amplitudes</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">low_amp_bursts</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="n">C1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-ts_burst_amp_low&#39;</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">high_amp_bursts</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">],</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="n">C2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-ts_burst_amp_high&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_48_0.png" src="../_images/04-TemporalFluctuations_48_0.png" />
+<img alt="../_images/04-TemporalFluctuations_48_1.png" src="../_images/04-TemporalFluctuations_48_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute power spectra of burst with different burst amplitudes</span>
+<span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">low_amp_bursts</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+<span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">high_amp_bursts</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot power spectra comparing bursts with different amplitudes</span>
+<span class="n">plot_spectra_shading</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="p">[</span><span class="n">powers1</span><span class="p">,</span> <span class="n">powers2</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+                     <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Low Amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;High Amplitude&#39;</span><span class="p">],</span>
+                     <span class="n">log_freqs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                     <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">line_colors</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">leg_size</span><span class="p">})</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-psd_burst_amplitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_50_0.png" src="../_images/04-TemporalFluctuations_50_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="time-resolved-measures">
+<h2>Time-Resolved Measures<a class="headerlink" href="#time-resolved-measures" title="Permalink to this headline">¶</a></h2>
+<p>In the above, we looked at average power measures, using power spectra.</p>
+<p>Here, we will explore time-resolved measures of oscillations, and see how they can interact with temporal variability of oscillations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Local settings</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="mi">3</span>          <span class="c1"># Number of seconds for these simulations</span>
+<span class="n">n_off1</span> <span class="o">=</span> <span class="mi">10</span>     <span class="c1"># Number of cycles off, at the start</span>
+<span class="n">bl</span> <span class="o">=</span> <span class="mi">7</span>          <span class="c1"># Burst length</span>
+<span class="n">n_off2</span> <span class="o">=</span> <span class="mi">10</span>     <span class="c1"># Number of cycles off, at the end</span>
+
+<span class="c1"># Set the frequency limit for plotting spectrograms</span>
+<span class="n">flim</span> <span class="o">=</span> <span class="mi">8</span>        <span class="c1"># The 8th index, which is about frequency of 25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a burst definition for the specified </span>
+<span class="n">osc_def</span> <span class="o">=</span> <span class="n">make_osc_def</span><span class="p">(</span><span class="n">n_off1</span><span class="p">,</span> <span class="n">bl</span><span class="p">,</span> <span class="n">n_off2</span><span class="p">)</span>
+<span class="n">burst</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">osc_def</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/tom/opt/anaconda3/lib/python3.8/site-packages/neurodsp/sim/periodic.py:157: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if burst_def == &#39;prob&#39; and burst_param not in burst_params:
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the simulated burst signal</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">burst</span><span class="p">)),</span> <span class="n">burst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_54_0.png" src="../_images/04-TemporalFluctuations_54_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute spectrogram of the above simulated signal</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">tt</span><span class="p">,</span> <span class="n">pxx</span> <span class="o">=</span> <span class="n">spectrogram</span><span class="p">(</span><span class="n">burst</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;hann&#39;</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.3</span><span class="o">*</span><span class="n">fs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remap times vector to simulate a trial structure</span>
+<span class="n">spg_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">tt</span><span class="p">)))</span>
+
+<span class="c1"># Check the selected frequency range</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Upper limit freq range: </span><span class="si">{:4.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">freqs</span><span class="p">[</span><span class="n">flim</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Upper limit freq range: 26.67
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a spectrogram of the burst time series</span>
+<span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">spg_times</span><span class="p">,</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">pxx</span><span class="p">,</span> <span class="n">flim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_57_0.png" src="../_images/04-TemporalFluctuations_57_0.png" />
+</div>
+</div>
+<p>In the above we can see that, the burst activity arises as a peak at a specific frequency and moment in time.</p>
+<div class="section" id="bursts-across-time">
+<h3>Bursts Across Time<a class="headerlink" href="#bursts-across-time" title="Permalink to this headline">¶</a></h3>
+<p>In the next analysis, we will simulate ‘trials’ (individual time segments with a burst), with variable burst timing, to examine what might happen within an experiment in which oscillatory activity is bursty, but variable (in time) across trials.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate some example &#39;trials&#39;, with different burst onset times</span>
+<span class="n">n_off1s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">n_off1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_off1s</span><span class="p">)),</span> <span class="n">n_off1s</span><span class="p">):</span>
+        
+    <span class="n">osc_def</span> <span class="o">=</span> <span class="n">make_osc_def</span><span class="p">(</span><span class="n">n_off1</span><span class="p">,</span> <span class="n">bl</span><span class="p">,</span> <span class="n">n_off1</span><span class="p">)</span>
+    <span class="n">burst</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">osc_def</span><span class="p">)</span>
+    
+    <span class="n">freqs</span><span class="p">,</span> <span class="n">tt</span><span class="p">,</span> <span class="n">pxx</span> <span class="o">=</span> <span class="n">spectrogram</span><span class="p">(</span><span class="n">burst</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;hann&#39;</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.3</span><span class="o">*</span><span class="n">fs</span><span class="p">))</span>
+    
+    <span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">spg_times</span><span class="p">,</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">pxx</span><span class="p">,</span> <span class="n">flim</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
+    <span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-indi_spectrogram_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/tom/opt/anaconda3/lib/python3.8/site-packages/neurodsp/sim/periodic.py:157: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if burst_def == &#39;prob&#39; and burst_param not in burst_params:
+</pre></div>
+</div>
+<img alt="../_images/04-TemporalFluctuations_60_1.png" src="../_images/04-TemporalFluctuations_60_1.png" />
+<img alt="../_images/04-TemporalFluctuations_60_2.png" src="../_images/04-TemporalFluctuations_60_2.png" />
+<img alt="../_images/04-TemporalFluctuations_60_3.png" src="../_images/04-TemporalFluctuations_60_3.png" />
+</div>
+</div>
+<p>In the above, we simulated example ‘trials’, with bursts at different points in time.</p>
+<p>Next, we can systematically simulate across these ‘trials’, and see what the average spectrogram looks like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate bursts across trials, and average</span>
+<span class="n">pxxs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">starts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">bs</span> <span class="ow">in</span> <span class="n">starts</span><span class="p">:</span>
+    
+    <span class="n">osc_def</span> <span class="o">=</span> <span class="n">make_osc_def</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">bl</span><span class="p">,</span> <span class="n">n_off2</span><span class="p">)</span>
+    <span class="n">bt</span> <span class="o">=</span> <span class="n">sim_bursty_oscillation</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">osc_def</span><span class="p">)</span>
+    
+    <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">pxx</span> <span class="o">=</span> <span class="n">spectrogram</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;hann&#39;</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.3</span><span class="o">*</span><span class="n">fs</span><span class="p">))</span>
+    <span class="n">pxxs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pxx</span><span class="p">)</span>
+    
+<span class="c1"># Average together spectrograms</span>
+<span class="n">avg_pxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pxxs</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the average spectrogram</span>
+<span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">spg_times</span><span class="p">,</span> <span class="n">freqs</span><span class="p">,</span> <span class="n">avg_pxx</span><span class="p">,</span> <span class="n">flim</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;04-avg_spectrogram&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04-TemporalFluctuations_63_0.png" src="../_images/04-TemporalFluctuations_63_0.png" />
+</div>
+</div>
+<p>As we can see, in the above average spectrogram, the activity looks to be sustained over the entire trial segment.</p>
+<p>However, we know that this is an averaging artifact - there was no consistent activity in any individual trial.</p>
+<p>This average reflects the variaiblity in timing across trials, but does not itself imply a sustained oscillation.</p>
+</div>
+<div class="section" id="conclusions">
+<h3>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h3>
+<p>In the above, we saw that the two simulated signals appeared to have different amounts of alpha power.</p>
+<p>Note that a common interpretation of a change in power is often that the magnitude of the oscillations has changed.</p>
+<p>In this scenario, that would be an inaccurate interpretation.</p>
+<p>As we can see from applying burst detection, the power of the oscillations <em>when they are present</em> is equal.</p>
+<p>This shows how differences in temporal variability can look like power differences.</p>
+<p>Applying burst detection can help address this potential issue.</p>
+<p>As well as being important to check as a control, temporal variability itself may be an interest measure of interest.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="03-AperiodicActivity.html" title="previous page">Aperiodic Activity</a>
+    <a class='right-next' id="next-link" href="05-WaveformShape.html" title="next page">Waveform Shape</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue, Natalie Schaworonkow, Bradley Voytek<br/>
+        
+            &copy; Copyright 2021-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

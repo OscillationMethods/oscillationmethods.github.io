@@ -1,0 +1,1249 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Band Definitions &#8212; Oscillation Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Aperiodic Activity" href="03-AperiodicActivity.html" />
+    <link rel="prev" title="Oscillation Presence" href="01-OscillationPresence.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Oscillation Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-OscillationPresence.html">
+   Oscillation Presence
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Band Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-AperiodicActivity.html">
+   Aperiodic Activity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-TemporalFluctuations.html">
+   Temporal Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-WaveformShape.html">
+   Waveform Shape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-SpatialSeparation.html">
+   Separation of Rhythms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-PowerConfounds.html">
+   Signal to Noise Ratio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/02-BandDefinitions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/oscillationmethods//master?urlpath=tree/oscmethods/notebooks/02-BandDefinitions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#issue">
+   Issue
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution">
+   Solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-work">
+   Related Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-discussion-examples">
+   Related Discussion / Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#settings">
+   Settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-time-series">
+   Simulate Time Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-power-spectra">
+     Compute Power Spectra
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-alpha-power-measures">
+     Compare Alpha Power Measures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-adjacent-bands">
+     Compare Adjacent Bands
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-group-analysis">
+   Run ‘Group’ Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-filtered-signals">
+   Compare Filtered Signals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-instantaneous-measures">
+   Compare Instantaneous Measures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sweep-across-center-frequencies">
+     Sweep across center frequencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-band-power-measures-across-simulated-signals">
+     Compare band power measures across simulated signals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="band-definitions">
+<h1>Band Definitions<a class="headerlink" href="#band-definitions" title="Permalink to this headline">¶</a></h1>
+<p>Neural oscillations vary in their center frequency, requiring that analyses check frequency ranges and consider individualized frequency bands.</p>
+<div class="section" id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
+<p>Many analyses apply predefined frequency ranges to analyze bands of interest. Such predefined ranges may not reflect the variability of individual peak frequencies that we observe in neural field data. The use of predefined band ranges can lead to misestimations of oscillatory power, if peaks are not well captured.</p>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p>Chosen frequency ranges for analyses of interest should be validated in the data to be analyzed.</p>
+<p>In at least some cases, individualized frequency ranges may need to be used to appropriately reflect the data.</p>
+</div>
+<div class="section" id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<p>The following papers include discussion of this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1016/S0165-0173(98)00056-3">EEG alpha and theta oscillations reflect cognitive and memory performance: a review and analysis</a>, Klimesch, 1999</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1016/j.pnpbp.2010.08.004">The increase in theta/beta ratio on resting-state EEG in boys with ADHD is mediated by slow alpha peak frequency</a>, Lansbergen et al, 2011</p></li>
+</ul>
+</div>
+<div class="section" id="related-discussion-examples">
+<h2>Related Discussion / Examples<a class="headerlink" href="#related-discussion-examples" title="Permalink to this headline">¶</a></h2>
+<p>The following other online examples / tutorials also discuss this topic:</p>
+<ul class="simple">
+<li><p>Band-by-band analyses of neural field data</p>
+<ul>
+<li><p><a class="reference external" href="https://fooof-tools.github.io/fooof/auto_motivations/measurements/plot_BandByBand.html">https://fooof-tools.github.io/fooof/auto_motivations/measurements/plot_BandByBand.html</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ttest_ind</span>
+
+<span class="kn">from</span> <span class="nn">fooof.utils</span> <span class="kn">import</span> <span class="n">trim_spectrum</span>
+<span class="kn">from</span> <span class="nn">fooof.plts.spectra</span> <span class="kn">import</span> <span class="n">plot_spectrum_shading</span><span class="p">,</span> <span class="n">plot_spectra_shading</span>
+
+<span class="kn">from</span> <span class="nn">neurodsp.sim</span> <span class="kn">import</span> <span class="n">sim_combined</span><span class="p">,</span> <span class="n">sim_oscillation</span><span class="p">,</span> <span class="n">sim_powerlaw</span>
+<span class="kn">from</span> <span class="nn">neurodsp.filt</span> <span class="kn">import</span> <span class="n">filter_signal</span>
+<span class="kn">from</span> <span class="nn">neurodsp.spectral</span> <span class="kn">import</span> <span class="n">compute_spectrum</span>
+<span class="kn">from</span> <span class="nn">neurodsp.utils</span> <span class="kn">import</span> <span class="n">remove_nans</span><span class="p">,</span> <span class="n">create_times</span><span class="p">,</span> <span class="n">set_random_seed</span>
+<span class="kn">from</span> <span class="nn">neurodsp.timefrequency</span> <span class="kn">import</span> <span class="n">amp_by_time</span><span class="p">,</span> <span class="n">freq_by_time</span><span class="p">,</span> <span class="n">phase_by_time</span>
+<span class="kn">from</span> <span class="nn">neurodsp.plts.time_series</span> <span class="kn">import</span> <span class="n">plot_time_series</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add path and import custom code for the project</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">compute_abs_power</span><span class="p">,</span> <span class="n">get_components</span>
+<span class="kn">from</span> <span class="nn">plts</span> <span class="kn">import</span> <span class="n">plot_bar</span><span class="p">,</span> <span class="n">style_psd</span><span class="p">,</span> <span class="n">savefig</span>
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">BANDS</span><span class="p">,</span> <span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">INDIV_COLOR</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;poster&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set random seed</span>
+<span class="n">set_random_seed</span><span class="p">(</span><span class="mi">808</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the average function to use</span>
+<span class="n">avg_func</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span>
+<span class="n">var_func</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define general simulation settings</span>
+<span class="n">n_seconds</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">create_times</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define parameters for the simulations</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span>
+<span class="n">ap_filt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Define center frequencies</span>
+<span class="n">cf1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">cf2</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="c1"># Define relative power of the signal components</span>
+<span class="n">comp_vars</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set frequency ranges of interest</span>
+<span class="n">psd_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analysis settings</span>
+<span class="n">nperseg</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">fs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot settings</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sig-1&#39;</span><span class="p">,</span> <span class="s1">&#39;sig-2&#39;</span><span class="p">]</span>
+<span class="n">ms</span> <span class="o">=</span> <span class="mi">18</span>
+
+<span class="c1"># Organize colors for plots</span>
+<span class="n">C1</span><span class="p">,</span> <span class="n">C2</span> <span class="o">=</span> <span class="n">COND_COLORS</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set whether to save out figures</span>
+<span class="n">SAVE_FIG</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulate-time-series">
+<h2>Simulate Time Series<a class="headerlink" href="#simulate-time-series" title="Permalink to this headline">¶</a></h2>
+<p>First, we’ll simulate some example data.</p>
+<p>Here, we will simulate two time series, each with an oscillation in them, but with slightly different center frequencies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate an aperiodic component</span>
+<span class="n">ap</span> <span class="o">=</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">ap_filt</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Simulate periodic components</span>
+<span class="n">osc1</span> <span class="o">=</span> <span class="n">sim_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf1</span><span class="p">)</span>
+<span class="n">osc2</span> <span class="o">=</span> <span class="n">sim_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combine periodic and aperiodic components of the simulated signals</span>
+<span class="n">sig1</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">osc1</span>
+<span class="n">sig2</span> <span class="o">=</span> <span class="n">ap</span> <span class="o">+</span> <span class="n">osc2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the first example signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig1</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">C1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-ts-sig1_noax&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_16_0.png" src="../_images/02-BandDefinitions_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the second example signal</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig2</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">C2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-ts-sig2_noax&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_17_0.png" src="../_images/02-BandDefinitions_17_0.png" />
+</div>
+</div>
+<div class="section" id="compute-power-spectra">
+<h3>Compute Power Spectra<a class="headerlink" href="#compute-power-spectra" title="Permalink to this headline">¶</a></h3>
+<p>Next, we will compute the power spectra, and compare the two signals.</p>
+<p>In particular, we will compare the peaks in the spectrum, to a canonically defined alpha range, shaded in blue.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the power spectra of each of the example signals</span>
+<span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig1</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+<span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig2</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the power spectrum of the first signal</span>
+<span class="n">plot_spectrum_shading</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">color</span><span class="o">=</span><span class="n">C1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">())</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-psd_alpha_cen&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_20_0.png" src="../_images/02-BandDefinitions_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the power spectrum of the second signal</span>
+<span class="n">plot_spectrum_shading</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">color</span><span class="o">=</span><span class="n">C2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">())</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-psd_alpha_off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_21_0.png" src="../_images/02-BandDefinitions_21_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot an extra version of the PSD plot for signal 2, for the figure</span>
+<span class="n">plot_spectrum_shading</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">clear_x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-psd_small_can&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the individualized range of the second signal</span>
+<span class="n">plot_spectrum_shading</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="p">[</span><span class="n">cf2</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cf2</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">INDIV_COLOR</span><span class="p">)</span>
+<span class="n">style_psd</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">clear_x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-psd_small_indi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_23_0.png" src="../_images/02-BandDefinitions_23_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="compare-alpha-power-measures">
+<h3>Compare Alpha Power Measures<a class="headerlink" href="#compare-alpha-power-measures" title="Permalink to this headline">¶</a></h3>
+<p>Now, let’s compare measures of alpha power on the simulated signal.</p>
+<p>We will compare alpha power computed from the power spectra, for both canonical and individualized ranges.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the canonical alpha range</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Canonical alpha range:&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Canonical alpha range: (8, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the absolute alpha power in the canonical range</span>
+<span class="n">cal1</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+<span class="n">cal2</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check calculated canonical alpha power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical Alpha Power - Signal 1 </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cal1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical Alpha Power - Signal 2 </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cal2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference in Canonical Alpha Power </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cal2</span> <span class="o">-</span> <span class="n">cal1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Canonical Alpha Power - Signal 1 	:   1.6027
+Canonical Alpha Power - Signal 2 	:   1.2670
+Difference in Canonical Alpha Power 	:  -0.3357
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the absolute alpha power in individualized ranges</span>
+<span class="n">ial1</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="p">[</span><span class="n">cf1</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cf1</span><span class="o">+</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ial2</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="p">[</span><span class="n">cf2</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cf2</span><span class="o">+</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check calculated individualized alpha power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individualized Alpha Power - Signal 1 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ial1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individualized Alpha Power - Signal 2 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ial2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference in Individualized Alpha Power </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ial2</span> <span class="o">-</span> <span class="n">ial1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Individualized Alpha Power - Signal 1 		:   1.6027
+Individualized Alpha Power - Signal 2 		:   1.5426
+Difference in Individualized Alpha Power 	:  -0.0601
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare the measured power, using the canoncal alpha range</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">cal1</span><span class="p">,</span> <span class="n">cal2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-can_alpha&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_30_0.png" src="../_images/02-BandDefinitions_30_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare the measured power, using individualized alpha</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">ial1</span><span class="p">,</span> <span class="n">ial2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-ind_alpha_on&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_31_0.png" src="../_images/02-BandDefinitions_31_0.png" />
+</div>
+</div>
+<p>As we can see in the above, the measures of canonical alpha find different amounts of alpha power in the two signals, despite the simulated time series having been simulated with the same amount of oscillatory power. The individualized bands correctly show equivalent amounts of oscillatory power.</p>
+</div>
+<div class="section" id="compare-adjacent-bands">
+<h3>Compare Adjacent Bands<a class="headerlink" href="#compare-adjacent-bands" title="Permalink to this headline">¶</a></h3>
+<p>Oscillatory center frequencies that don’t match canonical band definitions can also impact measures of adjacent bands.</p>
+<p>Here, we will measure measures of power in canonical theta and beta ranges.</p>
+<p>We will also compute power in individualized bands, defined by offsetting the band range with respect to the simulated alpha.</p>
+<p>Note that there were no theta and beta oscillations added to these simulations, and so measured power should not differ.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate power in the canonical theta band</span>
+<span class="n">cth1</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="n">BANDS</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">cth2</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="n">BANDS</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check calculated canonical theta power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical Theta Power - Signal 1 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cth1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical Theta Power - Signal 2 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cth2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference in Canonical Theta Power </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cth2</span> <span class="o">-</span> <span class="n">cth1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Canonical Theta Power - Signal 1 		:   0.2795
+Canonical Theta Power - Signal 2 		:   1.4513
+Difference in Canonical Theta Power 	:   1.1718
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot canonical theta</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">cth1</span><span class="p">,</span> <span class="n">cth2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-can_theta&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_36_0.png" src="../_images/02-BandDefinitions_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate power in the canonical beta band</span>
+<span class="n">cbe1</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="n">BANDS</span><span class="o">.</span><span class="n">beta</span><span class="p">)</span>
+<span class="n">cbe2</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="n">BANDS</span><span class="o">.</span><span class="n">beta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check calculated canonical beta power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical Beta Power - Signal 1 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cbe1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical Beta Power - Signal 2 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cbe2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference in Canonical Beta Power </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cbe2</span> <span class="o">-</span> <span class="n">cbe1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Canonical Beta Power - Signal 1 		:   0.1223
+Canonical Beta Power - Signal 2 		:   0.1223
+Difference in Canonical Beta Power 	:   0.0000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot canonical beta</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">cbe1</span><span class="p">,</span> <span class="n">cbe2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COND_COLORS</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-can_beta&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_39_0.png" src="../_images/02-BandDefinitions_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate power in the individualized theta band</span>
+<span class="n">ith1</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="p">[</span><span class="n">cf1</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">cf1</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ith2</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="p">[</span><span class="n">cf2</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">cf2</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check calculated individualized theta power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individualized Theta Power - Signal 1 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ith1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individualized Theta Power - Signal 2 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ith2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference in Individualuzed Theta Power </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ith2</span> <span class="o">-</span> <span class="n">ith1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Individualized Theta Power - Signal 1 		:   0.2795
+Individualized Theta Power - Signal 2 		:   0.2828
+Difference in Individualuzed Theta Power 	:   0.0033
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the comparison of individualized theta power</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">ith1</span><span class="p">,</span> <span class="n">ith2</span><span class="p">,</span> <span class="o">*</span><span class="n">labels</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_42_0.png" src="../_images/02-BandDefinitions_42_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate power in the individualized beta band</span>
+<span class="n">ibe1</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="p">[</span><span class="n">cf1</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="n">cf1</span><span class="o">+</span><span class="mi">20</span><span class="p">])</span>
+<span class="n">ibe2</span> <span class="o">=</span> <span class="n">compute_abs_power</span><span class="p">(</span><span class="n">freqs2</span><span class="p">,</span> <span class="n">powers2</span><span class="p">,</span> <span class="p">[</span><span class="n">cf2</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="n">cf2</span><span class="o">+</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check calculated individualized theta power</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individualized Beta Power - Signal 1 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ibe1</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individualized Beta Power - Signal 2 </span><span class="se">\t\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ibe2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Difference in Individualuzed Beta Power </span><span class="se">\t</span><span class="s2">: </span><span class="si">{:8.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ibe2</span> <span class="o">-</span> <span class="n">ibe1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Individualized Beta Power - Signal 1 		:   0.1223
+Individualized Beta Power - Signal 2 		:   0.1497
+Difference in Individualuzed Beta Power 	:   0.0274
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the comparison of individualized beta power</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">ibe1</span><span class="p">,</span> <span class="n">ibe2</span><span class="p">,</span> <span class="o">*</span><span class="n">labels</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_45_0.png" src="../_images/02-BandDefinitions_45_0.png" />
+</div>
+</div>
+<p>In the above, we can see that canonical theta, shows a difference in measured power due to the alpha peak “leaking” into the theta range.</p>
+<p>In this particular simulation, this does not happen for the beta range, as the simulated peaks do no overlap with beta.</p>
+<p>We can also see that the individualized bands appropriately show no significant differences in theta &amp; beta power.</p>
+<p>Note that in the above, measures in which there are no peaks do not reflect zero power due to the aperiodic component.</p>
+</div>
+</div>
+<div class="section" id="run-group-analysis">
+<h2>Run ‘Group’ Analysis<a class="headerlink" href="#run-group-analysis" title="Permalink to this headline">¶</a></h2>
+<p>In the above comparison, we used comparisons between example signals.</p>
+<p>Next, let’s run a simualted ‘group’ comparison, comparing between groups of signals with different center frequencies.</p>
+<p>For this comparison, we can imagine we are comparing two groups of subjects, one of which has a systematically different typical center frequency.</p>
+<p>We will compare these ‘groups’ using canonical and individualized alpha bands</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a number of simulations to run &amp; compare</span>
+<span class="n">n_sims</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize variables to store computed measures</span>
+<span class="n">cal1</span><span class="p">,</span> <span class="n">cal2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="n">ial1</span><span class="p">,</span> <span class="n">ial2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="c1"># Simulate a &#39;group&#39; comparison, calculating alpha power measures on groups of signals</span>
+<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_sims</span><span class="p">):</span>
+
+    <span class="n">cur_freqs1</span><span class="p">,</span> <span class="n">cur_powers1</span> <span class="o">=</span> <span class="n">compute_spectrum</span><span class="p">(</span>\
+        <span class="n">sim_combined</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">get_components</span><span class="p">(</span><span class="n">cf1</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">ap_filt</span><span class="p">),</span> <span class="n">comp_vars</span><span class="p">),</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+    <span class="n">cur_freqs2</span><span class="p">,</span> <span class="n">cur_powers2</span> <span class="o">=</span> <span class="n">compute_spectrum</span><span class="p">(</span>\
+        <span class="n">sim_combined</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">get_components</span><span class="p">(</span><span class="n">cf2</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">ap_filt</span><span class="p">),</span> <span class="n">comp_vars</span><span class="p">),</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+    
+    <span class="n">cal1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">trim_spectrum</span><span class="p">(</span><span class="n">cur_freqs1</span><span class="p">,</span> <span class="n">cur_powers1</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">cal2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">trim_spectrum</span><span class="p">(</span><span class="n">cur_freqs2</span><span class="p">,</span> <span class="n">cur_powers2</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span>
+    
+    <span class="n">ial1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">trim_spectrum</span><span class="p">(</span><span class="n">cur_freqs1</span><span class="p">,</span> <span class="n">cur_powers1</span><span class="p">,</span> <span class="p">[</span><span class="n">cf1</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cf1</span><span class="o">+</span><span class="mi">2</span><span class="p">])[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">ial2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">trim_spectrum</span><span class="p">(</span><span class="n">cur_freqs2</span><span class="p">,</span> <span class="n">cur_powers2</span><span class="p">,</span> <span class="p">[</span><span class="n">cf2</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cf2</span><span class="o">+</span><span class="mi">2</span><span class="p">])[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare the measured power, using the canoncal alpha range</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">cal1</span><span class="p">,</span> <span class="n">cal2</span><span class="p">,</span> <span class="s1">&#39;Group1&#39;</span><span class="p">,</span> <span class="s1">&#39;Group2&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-bar_canalpha&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_50_0.png" src="../_images/02-BandDefinitions_50_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute a t-test comparison of the groups, using the canoncal alpha range</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-test - t-val: </span><span class="si">{:8.4f}</span><span class="s1">, p-val: </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">cal1</span><span class="p">,</span> <span class="n">cal2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T-test - t-val:  47.1578, p-val:   0.0000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare the measured power, using individualized alpha range</span>
+<span class="n">plot_bar</span><span class="p">(</span><span class="n">ial1</span><span class="p">,</span> <span class="n">ial2</span><span class="p">,</span> <span class="s1">&#39;Group1&#39;</span><span class="p">,</span> <span class="s1">&#39;Group2&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">INDIV_COLOR</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-bar_actalpha&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_52_0.png" src="../_images/02-BandDefinitions_52_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute a t-test comparison of the groups, using individualized alpha range</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-test comparison - t-val: </span><span class="si">{:8.4f}</span><span class="s1">, p-val: </span><span class="si">{:8.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">ial1</span><span class="p">,</span> <span class="n">ial2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T-test comparison - t-val:  -0.5132, p-val:   0.6108
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above, we can see how a difference in frequency can lead to measuring a significant difference in power, when using canonical frequency bands.</p>
+</div>
+<div class="section" id="compare-filtered-signals">
+<h2>Compare Filtered Signals<a class="headerlink" href="#compare-filtered-signals" title="Permalink to this headline">¶</a></h2>
+<p>Another way we can compare the impacts of differences in center frequencies is by looking at filtered data.</p>
+<p>Here, we will filter the signals, using canonical and individualized frequency ranges.</p>
+<p>Note that for the first signal, the canonical and individualized range are equivalent, so we will only show one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter signals into the alpha range, including an individualized range</span>
+<span class="n">sig_filt1</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">sig1</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+<span class="n">sig_filt2</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">sig2</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter the second signal to an individualized alpha range</span>
+<span class="n">sig_filt2_ind</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">sig2</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">cf2</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cf2</span><span class="o">+</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the first signal, with the corresponding filtered trace</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig1</span><span class="p">,</span> <span class="n">sig_filt1</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sig1: Canonical Alpha&#39;</span><span class="p">,</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_58_0.png" src="../_images/02-BandDefinitions_58_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare the filtered traces for signal 2, between canonical &amp; individualized</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig2</span><span class="p">,</span> <span class="n">sig_filt2</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sig2: Canonical Alpha&#39;</span><span class="p">,</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig2</span><span class="p">,</span> <span class="n">sig_filt2_ind</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sig2: Individualized Alpha&#39;</span><span class="p">,</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_59_0.png" src="../_images/02-BandDefinitions_59_0.png" />
+<img alt="../_images/02-BandDefinitions_59_1.png" src="../_images/02-BandDefinitions_59_1.png" />
+</div>
+</div>
+<p>For the second signal, comparing canonical and individualized ranges shows that the individualized range captures more of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zoom in &amp; compare within the second signal between canonical &amp; individualized</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Signal 2: Canonical vs. Individualized&quot;</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig2</span><span class="p">,</span> <span class="n">sig_filt2</span><span class="p">,</span> <span class="n">sig_filt2_ind</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span>
+                 <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_61_0.png" src="../_images/02-BandDefinitions_61_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the two filtered traces (canonical and individualized)</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig_filt2</span><span class="p">,</span> <span class="n">sig_filt2_ind</span><span class="p">],</span>
+                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">INDIV_COLOR</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-ts-filt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_62_0.png" src="../_images/02-BandDefinitions_62_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="compare-instantaneous-measures">
+<h2>Compare Instantaneous Measures<a class="headerlink" href="#compare-instantaneous-measures" title="Permalink to this headline">¶</a></h2>
+<p>To quantify our comparisons from the filter examples, we can use instantaneous measures.</p>
+<p>Here, we will compute amplitude and frequency measures, and compare the average results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate instantaneous measures of amplitude</span>
+<span class="n">amp1</span> <span class="o">=</span> <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig_filt1</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">amp2</span> <span class="o">=</span> <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig_filt2</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">amp2_ind</span> <span class="o">=</span> <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig_filt2_ind</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check measures of instantaneous amplitude</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Avg amp: Sig1 (canonical):  </span><span class="se">\t</span><span class="s1"> </span><span class="si">{:1.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Avg amp: Sig2 (canonical):  </span><span class="se">\t</span><span class="s1"> </span><span class="si">{:1.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Avg amp: Sig2 (individual): </span><span class="se">\t</span><span class="s1"> </span><span class="si">{:1.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp2_ind</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avg amp: Sig1 (canonical):  	 1.4229
+Avg amp: Sig2 (canonical):  	 1.0111
+Avg amp: Sig2 (individual): 	 1.4264
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, we can see that the alpha measures are equivalent when individualized (but different with the canonical range).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate instanenous measures of frequency</span>
+<span class="n">fre1</span> <span class="o">=</span> <span class="n">freq_by_time</span><span class="p">(</span><span class="n">sig_filt1</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">fre2</span> <span class="o">=</span> <span class="n">freq_by_time</span><span class="p">(</span><span class="n">sig_filt2</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">fre2_ind</span> <span class="o">=</span> <span class="n">freq_by_time</span><span class="p">(</span><span class="n">sig_filt2_ind</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check measures of instantaneous frequency - signal1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;True freq - sig1:  </span><span class="se">\t\t</span><span class="si">{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cf1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Avg  freq - sig1 (canonical):  </span><span class="se">\t</span><span class="si">{:8.2f}</span><span class="s1"> </span><span class="se">\t</span><span class="si">{:8.2f}</span><span class="s1">&#39;</span>\
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">fre1</span><span class="p">),</span> <span class="n">var_func</span><span class="p">(</span><span class="n">fre1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True freq - sig1:  		   10.00
+Avg  freq - sig1 (canonical):  	    9.97 	    1.67
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check measures of instantaneous frequency - signal2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;True freq - sig2:  </span><span class="se">\t\t</span><span class="si">{:8.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cf2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Avg  freq - sig2 (canonical):  </span><span class="se">\t</span><span class="si">{:8.2f}</span><span class="s1"> </span><span class="se">\t</span><span class="si">{:8.2f}</span><span class="s1">&#39;</span>\
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">fre2</span><span class="p">),</span> <span class="n">var_func</span><span class="p">(</span><span class="n">fre2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Avg  freq - sig2 (individual): </span><span class="se">\t</span><span class="si">{:8.2f}</span><span class="s1"> </span><span class="se">\t</span><span class="si">{:8.2f}</span><span class="s1">&#39;</span>\
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">fre2_ind</span><span class="p">),</span> <span class="n">var_func</span><span class="p">(</span><span class="n">fre2_ind</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True freq - sig2:  		    8.00
+Avg  freq - sig2 (canonical):  	    8.09 	    0.70
+Avg  freq - sig2 (individual): 	    7.98 	    0.28
+</pre></div>
+</div>
+</div>
+</div>
+<p>Individualized frequency measures can only measure frequencies within the narrow-band band range they see.</p>
+<p>This means they can be biased if the true frequencies at at or near the edge of this range, as we can see in the above.</p>
+<div class="section" id="sweep-across-center-frequencies">
+<h3>Sweep across center frequencies<a class="headerlink" href="#sweep-across-center-frequencies" title="Permalink to this headline">¶</a></h3>
+<p>In the examples above, we have used two different center frequencies to compare measures.</p>
+<p>Center frequencies can of course vary more continously.</p>
+<p>In this example, we will simulate signals and compare measures across a range of alpha center frequencies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize stores for measures</span>
+<span class="n">outs_can</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">outs_ind</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">powers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ths</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">bes</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate signals across a range of alpha center frequencies, and collect measures</span>
+<span class="n">cfs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">cf</span> <span class="ow">in</span> <span class="n">cfs</span><span class="p">:</span>
+    
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">sim_combined</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">get_components</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">ap_filt</span><span class="p">),</span> <span class="n">comp_vars</span><span class="p">)</span>
+    
+    <span class="n">_</span><span class="p">,</span> <span class="n">pows</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">nperseg</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+    <span class="n">powers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pows</span><span class="p">)</span>
+    
+    <span class="n">outs_can</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)))</span>
+    <span class="n">outs_ind</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="p">[</span><span class="n">cf</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">cf</span><span class="o">+</span><span class="mi">2</span><span class="p">])))</span>
+    
+    <span class="n">ths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">BANDS</span><span class="o">.</span><span class="n">theta</span><span class="p">)))</span>
+    <span class="n">bes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">avg_func</span><span class="p">(</span><span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">BANDS</span><span class="o">.</span><span class="n">beta</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/tom/opt/anaconda3/lib/python3.8/site-packages/neurodsp/filt/checks.py:172: UserWarning: Transition bandwidth is  4.0  Hz. This is greater than the desiredpass/stop bandwidth of  4.0 Hz
+  warn(&#39;Transition bandwidth is  {:.1f}  Hz. This is greater than the desired&#39;\
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the power spectra of the signals across different center frequencies</span>
+<span class="n">plot_spectra_shading</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">ALPHA_COLOR</span><span class="p">,</span>
+                     <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-psds_all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_74_0.png" src="../_images/02-BandDefinitions_74_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="compare-band-power-measures-across-simulated-signals">
+<h3>Compare band power measures across simulated signals<a class="headerlink" href="#compare-band-power-measures-across-simulated-signals" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the measured alpha power (canonical &amp; individualized) across alpha CF</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cfs</span><span class="p">,</span> <span class="n">outs_can</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="n">ms</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;canonical&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cfs</span><span class="p">,</span> <span class="n">outs_ind</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="n">ms</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">INDIV_COLOR</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;individualized&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.30</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-alpha_power&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_76_0.png" src="../_images/02-BandDefinitions_76_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the measured &#39;theta&#39; power from across varying alpha CF</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cfs</span><span class="p">,</span> <span class="n">ths</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="n">ms</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-theta_power&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_77_0.png" src="../_images/02-BandDefinitions_77_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the measured &#39;beta&#39; power from across varying alpha CF</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cfs</span><span class="p">,</span> <span class="n">bes</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="n">ms</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;02-beta_power&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02-BandDefinitions_78_0.png" src="../_images/02-BandDefinitions_78_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Neural oscillations are often analyzed using pre-defined band ranges of interest.</p>
+<p>Here, we have explored a series of limitations whereby if these ranges do not appropriately reflect the actual center frequencies of the data, then measures of interest may be confounded, for example, differences in center frequency can be look like a difference in power.</p>
+<p>Chosen frequency ranges should always be validated on the data to be analyzed. In some cases, individualized frequency ranges may be required in order to better capture the data.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01-OscillationPresence.html" title="previous page">Oscillation Presence</a>
+    <a class='right-next' id="next-link" href="03-AperiodicActivity.html" title="next page">Aperiodic Activity</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue, Natalie Schaworonkow, Bradley Voytek<br/>
+        
+            &copy; Copyright 2021-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

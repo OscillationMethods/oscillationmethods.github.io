@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Separation of Rhythms &#8212; Oscillation Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Signal to Noise Ratio" href="07-PowerConfounds.html" />
+    <link rel="prev" title="Waveform Shape" href="05-WaveformShape.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Oscillation Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-OscillationPresence.html">
+   Oscillation Presence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-BandDefinitions.html">
+   Band Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-AperiodicActivity.html">
+   Aperiodic Activity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-TemporalFluctuations.html">
+   Temporal Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-WaveformShape.html">
+   Waveform Shape
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Separation of Rhythms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-PowerConfounds.html">
+   Signal to Noise Ratio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/06-SpatialSeparation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/oscillationmethods//master?urlpath=tree/oscmethods/notebooks/06-SpatialSeparation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#issue">
+   Issue
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution">
+   Solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-work">
+   Related Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-requirements">
+   Additional Requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#settings">
+   Settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-time-series-with-multiple-components-sources">
+   Simulate time series with multiple components (sources)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-separation">
+   Source Separation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-brain">
+     Plot Brain
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-1-different-peak-frequencies">
+   Example 1: Different Peak Frequencies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-2-different-phases">
+   Example 2: Different Phases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sources">
+     Sources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="separation-of-rhythms">
+<h1>Separation of Rhythms<a class="headerlink" href="#separation-of-rhythms" title="Permalink to this headline">¶</a></h1>
+<p>Recordings of neural activity can pick up multiple, overlapping, oscillations.</p>
+<div class="section" id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
+<p>Neural recordings may often reflect mixtures of multiple underlying sources.</p>
+<p>Measures applied these combined signals may not accurately reflect the underlying signal components.</p>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p>Source separation techniques can be used to separate sources, which can then be analyzed individually.</p>
+</div>
+<div class="section" id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2011.01.057">A novel method for reliable and fast extraction of neuronal EEG/MEG oscillations on the basis of spatio-spectral decomposition</a>, Nikulin et al, 2011</p></li>
+</ul>
+</div>
+<div class="section" id="additional-requirements">
+<h2>Additional Requirements<a class="headerlink" href="#additional-requirements" title="Permalink to this headline">¶</a></h2>
+<p>This example has some additional required components:</p>
+<ul class="simple">
+<li><p>The demo leadfield plot, requires the ‘NYhead’ leadfield model from:
+<a class="reference external" href="https://www.parralab.org/nyhead/sa_nyhead.mat">https://www.parralab.org/nyhead/sa_nyhead.mat</a></p>
+<ul>
+<li><p>Documentation for this is available here: <a class="reference external" href="https://www.parralab.org/nyhead/">https://www.parralab.org/nyhead/</a></p></li>
+</ul>
+</li>
+<li><p>In addition, this example uses additional requirements: <code class="docutils literal notranslate"><span class="pre">h5py</span></code>, <code class="docutils literal notranslate"><span class="pre">mne</span></code>, <code class="docutils literal notranslate"><span class="pre">pyvista</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+
+<span class="kn">from</span> <span class="nn">fooof.plts.spectra</span> <span class="kn">import</span> <span class="n">plot_spectrum_shading</span>
+<span class="kn">from</span> <span class="nn">fooof.utils</span> <span class="kn">import</span> <span class="n">trim_spectrum</span>
+
+<span class="kn">from</span> <span class="nn">neurodsp.sim</span> <span class="kn">import</span> <span class="n">sim_oscillation</span><span class="p">,</span> <span class="n">sim_powerlaw</span><span class="p">,</span> <span class="n">sim_combined</span>
+<span class="kn">from</span> <span class="nn">neurodsp.filt</span> <span class="kn">import</span> <span class="n">filter_signal</span>
+<span class="kn">from</span> <span class="nn">neurodsp.spectral</span> <span class="kn">import</span> <span class="n">compute_spectrum</span>
+<span class="kn">from</span> <span class="nn">neurodsp.timefrequency</span> <span class="kn">import</span> <span class="n">amp_by_time</span><span class="p">,</span> <span class="n">phase_by_time</span><span class="p">,</span> <span class="n">freq_by_time</span>
+<span class="kn">from</span> <span class="nn">neurodsp.utils</span> <span class="kn">import</span> <span class="n">create_times</span><span class="p">,</span> <span class="n">set_random_seed</span>
+<span class="kn">from</span> <span class="nn">neurodsp.plts.time_series</span> <span class="kn">import</span> <span class="n">plot_time_series</span><span class="p">,</span> <span class="n">plot_instantaneous_measure</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import additional requirements needed for this example</span>
+<span class="kn">import</span> <span class="nn">mne</span>
+<span class="kn">from</span> <span class="nn">mne.time_frequency</span> <span class="kn">import</span> <span class="n">psd_welch</span>
+<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">h5py</span> <span class="kn">import</span> <span class="n">File</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add path and import custom code for the project</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">spatial</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">mu_wave</span>
+<span class="kn">from</span> <span class="nn">plts</span> <span class="kn">import</span> <span class="n">plot_data_grid</span><span class="p">,</span> <span class="n">savefig</span>
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;poster&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set random seed</span>
+<span class="n">set_random_seed</span><span class="p">(</span><span class="mi">808</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define general simulation settings</span>
+<span class="n">n_seconds</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">create_times</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define parameters for the simulations</span>
+<span class="n">cf1</span> <span class="o">=</span> <span class="mf">9.5</span>
+<span class="n">ph1</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">cf2</span> <span class="o">=</span> <span class="mf">10.5</span>
+<span class="n">ph2</span> <span class="o">=</span> <span class="mf">0.25</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">ap_filt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collect parameters and set up simulations</span>
+<span class="n">components</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sim_powerlaw&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;f_range&#39;</span> <span class="p">:</span> <span class="n">ap_filt</span><span class="p">},</span>
+              <span class="s1">&#39;sim_oscillation&#39;</span> <span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;freq&#39;</span> <span class="p">:</span> <span class="n">cf1</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span> <span class="p">:</span> <span class="n">ph1</span><span class="p">},</span>
+                                   <span class="p">{</span><span class="s1">&#39;freq&#39;</span> <span class="p">:</span> <span class="n">cf2</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span> <span class="p">:</span> <span class="n">ph2</span><span class="p">}]}</span>
+
+
+<span class="c1"># Define parameters for signals with only of the alphas, for comparison</span>
+<span class="n">comps_a1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sim_powerlaw&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;f_range&#39;</span> <span class="p">:</span> <span class="n">ap_filt</span><span class="p">},</span>
+            <span class="s1">&#39;sim_oscillation&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;freq&#39;</span> <span class="p">:</span> <span class="n">cf1</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span> <span class="p">:</span> <span class="n">ph1</span><span class="p">}}</span>
+<span class="n">comps_a2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sim_powerlaw&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;f_range&#39;</span> <span class="p">:</span> <span class="n">ap_filt</span><span class="p">},</span>
+            <span class="s1">&#39;sim_oscillation&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;freq&#39;</span> <span class="p">:</span> <span class="n">cf2</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span> <span class="p">:</span> <span class="n">ph2</span><span class="p">}}</span>
+
+<span class="c1"># Define relative power of the signal components</span>
+<span class="n">comp_vars</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define frequency ranges of interest</span>
+<span class="n">psd_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot settings</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;#CC2B1C&quot;</span><span class="p">,</span> <span class="s2">&quot;#3C2C71&quot;</span><span class="p">,</span> <span class="s2">&quot;#115C12&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set whether to save out figures</span>
+<span class="n">SAVE_FIG</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulate-time-series-with-multiple-components-sources">
+<h2>Simulate time series with multiple components (sources)<a class="headerlink" href="#simulate-time-series-with-multiple-components-sources" title="Permalink to this headline">¶</a></h2>
+<p>For this example, we will simulate a signal that includes multiple putative sources, by adding multiple components to the signal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate each component for the complete signal separately</span>
+<span class="n">comp_ap</span> <span class="o">=</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="n">exp</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">ap_filt</span><span class="p">)</span>
+<span class="n">comp_pe1</span> <span class="o">=</span> <span class="n">sim_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf1</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">ph1</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">comp_pe2</span> <span class="o">=</span> <span class="n">sim_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf2</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">ph2</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot each component of the complete signal separately</span>
+<span class="n">plt_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;ylim&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="s1">&#39;lw&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> 
+              <span class="s1">&#39;xlabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ylabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">comp_ap</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">comp_pe1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">comp_pe2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/06-ts-sigcomps.pdf&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_15_0.png" src="../_images/06-SpatialSeparation_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate the combined signal, with all components</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">sim_combined</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">comp_vars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the combined signal</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;06-ts_comb&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_17_0.png" src="../_images/06-SpatialSeparation_17_0.png" />
+</div>
+</div>
+<p>Next we will compute instantaneous measures of the combined signal.</p>
+<p>Note that, in the combined signal, each of the oscillatory components is totally consistent (has no variation across time).</p>
+<p>Any observed variation seen in the instantaneous measures therefore must be arising due the overlap / interference of multiple signals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the instantaneous measures of the combined signal</span>
+<span class="n">plt_kwargs</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;xlim&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="s1">&#39;alpha&#39;</span> <span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;xlabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ylabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">phase_by_time</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">),</span>
+                           <span class="s1">&#39;phase&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">filter_signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">),</span>
+                                                 <span class="n">amp_by_time</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)],</span>
+                           <span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="n">plot_instantaneous_measure</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">freq_by_time</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">),</span>
+                           <span class="s1">&#39;frequency&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">17.5</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;06-ts-measures&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_19_0.png" src="../_images/06-SpatialSeparation_19_0.png" />
+</div>
+</div>
+<p>Lastly, we will plot the power spectrum.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the power spectrum of the combined signal</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">powers</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">fs</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+<span class="n">plot_spectrum_shading</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">powers</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span>
+                      <span class="n">log_freqs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;06-psd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_21_0.png" src="../_images/06-SpatialSeparation_21_0.png" />
+</div>
+</div>
+<p>Note that the power spectrum has a suggestion of a double peak, though it is not clear just from this if this reflects multiple oscillations.</p>
+<p>Collectively, in the above, we can see how having multiple, continuous, oscillations, that contribute to the same recorded signal, can lead to interference of the sources, and variable measures that may be difficult to interpret.</p>
+</div>
+<div class="section" id="source-separation">
+<h2>Source Separation<a class="headerlink" href="#source-separation" title="Permalink to this headline">¶</a></h2>
+<p>In the above, we just simulated signals and added them together.</p>
+<p>In actual data, the combination of underlying sources happens in particular ways, as different cortical sources are ‘seen’ by overlying electrodes.</p>
+<p>For the next examples, we will use a head model to simulate this more directly.</p>
+<p>In the following, we will be refer to the ‘leadfield’, which is a mathematical description of how underlying sources are reflected in overlying electrodes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load lead field matrix &amp; get data of interest</span>
+<span class="n">h5_file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;data/sa_nyhead.mat&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">ch_names</span><span class="p">,</span> <span class="n">electrodes</span><span class="p">,</span> <span class="n">leadfield</span> <span class="o">=</span> <span class="n">load_helper</span><span class="p">(</span><span class="n">h5_file</span><span class="p">)</span>
+
+<span class="c1"># Select an electrode of interest for plotting</span>
+<span class="n">selected_channel</span> <span class="o">=</span> <span class="s2">&quot;PO3h&quot;</span>
+<span class="n">ch1</span> <span class="o">=</span> <span class="s2">&quot;PPO5&quot;</span>
+<span class="n">ch2</span> <span class="o">=</span> <span class="s2">&quot;O1&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the needed leadfield coefficients from the file</span>
+<span class="n">leadfield_coef</span><span class="p">,</span> <span class="n">idx_source1</span><span class="p">,</span> <span class="n">idx_source2</span> <span class="o">=</span> \
+    <span class="n">get_leadfield_coefs</span><span class="p">(</span><span class="n">h5_file</span><span class="p">,</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">ch2</span><span class="p">,</span> <span class="n">selected_channel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General settings for next set of simulations</span>
+<span class="n">n_signals</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">n_seconds</span> <span class="o">=</span> <span class="n">n_samples</span> <span class="o">/</span> <span class="n">fs</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_seconds</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+
+<span class="c1"># Settings for examples</span>
+<span class="n">main_freq1</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">main_freq2</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">main_freq3</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ap_level</span> <span class="o">=</span> <span class="mf">1.75</span>
+<span class="n">exponent</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aperiodic components for examples</span>
+<span class="n">ap1</span> <span class="o">=</span> <span class="n">ap_level</span> <span class="o">*</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="n">exponent</span><span class="p">)</span>
+<span class="n">ap2</span> <span class="o">=</span> <span class="n">ap_level</span> <span class="o">*</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="n">exponent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-brain">
+<h3>Plot Brain<a class="headerlink" href="#plot-brain" title="Permalink to this headline">¶</a></h3>
+<p>For the following examples, we be using a head model, with two cortical sources (red and blue), recorded by an overlying electrode (green).</p>
+<p>First, we will plot the head and cortex model, showing the sources and the electrode of interest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the head plot</span>
+<span class="n">plot_head</span><span class="p">(</span><span class="n">h5_file</span><span class="p">,</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">ch2</span><span class="p">,</span> <span class="n">selected_channel</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the 3d head image</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax_head</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax_head</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;mesh_nyhead.png&quot;</span><span class="p">))</span>
+<span class="n">ax_head</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">1100</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
+<span class="n">ax_head</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_30_0.png" src="../_images/06-SpatialSeparation_30_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-1-different-peak-frequencies">
+<h2>Example 1: Different Peak Frequencies<a class="headerlink" href="#example-1-different-peak-frequencies" title="Permalink to this headline">¶</a></h2>
+<p>In the next example, we will simulate two source signals (red and blue) with slightly different frequencies.</p>
+<p>Note that the simulated example here is a ‘mu’ wave - an asymetric wave in the alpha range (see notebook 05).</p>
+<p>Due to the frequency differences, these oscillations will lead to a combined signal at the recorded electrode (green).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create simulated data and organize into an MNE object</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_signals</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">))</span>
+<span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">mu_wave</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">main_freq</span><span class="o">=</span><span class="n">main_freq1</span><span class="p">,</span> <span class="n">wave_shift</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">ap1</span>
+<span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">mu_wave</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">main_freq</span><span class="o">=</span><span class="n">main_freq2</span><span class="p">,</span> <span class="n">wave_shift</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">ap2</span>
+<span class="n">epochs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">leadfield_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">leadfield_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="n">make_mne</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute spectra</span>
+<span class="n">psd</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">psd_welch</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">fmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">n_fft</span><span class="o">=</span><span class="mi">2001</span><span class="p">,</span> <span class="n">n_overlap</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 2.001 (s)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot power spectra and time series for the 1st example</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">crop</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">plot_data_grid</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">times</span><span class="p">,</span> <span class="n">raw</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">psd</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">main_freq1</span><span class="p">,</span> <span class="n">main_freq2</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;06-example1_grid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_34_0.png" src="../_images/06-SpatialSeparation_34_0.png" />
+</div>
+</div>
+<p>In the above, we can see how the source signal time series has variable across time cancellation due to the interference between the similar frequencies.</p>
+</div>
+<div class="section" id="example-2-different-phases">
+<h2>Example 2: Different Phases<a class="headerlink" href="#example-2-different-phases" title="Permalink to this headline">¶</a></h2>
+<p>In the next example, we will simulate two source signals (red and blue) at the same frequency, but with a phase offset between them.</p>
+<p>Note that the simulated example here is a ‘mu’ wave - an asymetric wave in the alpha range (see notebook 05).</p>
+<p>Due to the phase shift, these oscillations will experience destructive experience at the recorded electrode (green).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create simulated data and organize into an MNE object</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_signals</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">))</span>
+<span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">mu_wave</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">main_freq</span><span class="o">=</span><span class="n">main_freq3</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">ap1</span>
+<span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">mu_wave</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">main_freq</span><span class="o">=</span><span class="n">main_freq3</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">+</span> <span class="n">ap2</span>
+<span class="n">epochs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">leadfield_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">leadfield_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">raw2</span> <span class="o">=</span> <span class="n">make_mne</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute power spectra for the signals</span>
+<span class="n">psd2</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">psd_welch</span><span class="p">(</span><span class="n">raw2</span><span class="p">,</span> <span class="n">fmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fmax</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">n_fft</span><span class="o">=</span><span class="mi">2001</span><span class="p">,</span> <span class="n">n_overlap</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 2.001 (s)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot power spectra and time series for the 2nd example</span>
+<span class="n">raw2</span><span class="o">.</span><span class="n">crop</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">plot_data_grid</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">times</span><span class="p">,</span> <span class="n">raw2</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">psd2</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;06-example2_grid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_39_0.png" src="../_images/06-SpatialSeparation_39_0.png" />
+</div>
+</div>
+<p>In the above example, we can see how the source signal experiences a lot of cancellation in the times series recorded at the electrode.</p>
+<div class="section" id="sources">
+<h3>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
+<p>Here we will plot the sources for the examples above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an MNE object for plotting topographies</span>
+<span class="n">raw3</span> <span class="o">=</span> <span class="n">make_mne_topo</span><span class="p">(</span><span class="n">ch_names</span><span class="p">,</span> <span class="n">electrodes</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">leadfield</span><span class="p">,</span> <span class="n">idx_source1</span><span class="p">,</span> <span class="n">idx_source2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot leadfield for source 1</span>
+<span class="n">plot_topography</span><span class="p">(</span><span class="n">raw3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">selected_channel</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;06-source1_topo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_43_0.png" src="../_images/06-SpatialSeparation_43_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot leadfield for source 2</span>
+<span class="n">plot_topography</span><span class="p">(</span><span class="n">raw3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">selected_channel</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;06-source2_topo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06-SpatialSeparation_44_0.png" src="../_images/06-SpatialSeparation_44_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>What is recorded at the electrodes level may reflect multiple sources.</p>
+<p>As we’ve seen in this example, the combined signal can look much more variable than the underlying components it reflects.</p>
+<p>This stems from how oscillatory signals sum together - and the ways in which they partially cancel each other out.</p>
+<p>Measures computed on the recorded signal may not directly reflect the underlying signals, but rather the interference between multiple sources.</p>
+<p>To address this, source separation approaches can be used to try to separate different underlying sources, which can then be analyzed separately.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="05-WaveformShape.html" title="previous page">Waveform Shape</a>
+    <a class='right-next' id="next-link" href="07-PowerConfounds.html" title="next page">Signal to Noise Ratio</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue, Natalie Schaworonkow, Bradley Voytek<br/>
+        
+            &copy; Copyright 2021-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

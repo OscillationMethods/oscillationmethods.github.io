@@ -1,0 +1,1029 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waveform Shape &#8212; Oscillation Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Separation of Rhythms" href="06-SpatialSeparation.html" />
+    <link rel="prev" title="Temporal Fluctuations" href="04-TemporalFluctuations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Oscillation Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-OscillationPresence.html">
+   Oscillation Presence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-BandDefinitions.html">
+   Band Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-AperiodicActivity.html">
+   Aperiodic Activity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-TemporalFluctuations.html">
+   Temporal Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Waveform Shape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-SpatialSeparation.html">
+   Separation of Rhythms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-PowerConfounds.html">
+   Signal to Noise Ratio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/05-WaveformShape.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/oscillationmethods//master?urlpath=tree/oscmethods/notebooks/05-WaveformShape.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#issue">
+   Issue
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution">
+   Solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-work">
+   Related Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#related-discussion-examples">
+   Related Discussion / Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#settings">
+   Settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-time-series">
+   Simulate Time Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-shape-features">
+     Computing Shape Features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filter-time-series">
+     Filter Time Series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-across-waveform-shapes">
+   Simulate Across Waveform Shapes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-power-spectra">
+     Compute Power Spectra
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-across-asymmetry-values">
+     Compare across asymmetry values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-phase-amplitude-coupling">
+     Compute Phase-Amplitude Coupling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="waveform-shape">
+<h1>Waveform Shape<a class="headerlink" href="#waveform-shape" title="Permalink to this headline">¶</a></h1>
+<p>Neural oscillations vary in their waveform shape, which can impact their measurements and interpretations.</p>
+<div class="section" id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
+<p>Neural oscillations are often non-sinusoidal, and exhibit variability in their waveform shape.</p>
+<p>This can cause issues with analysis methods that assume sinusoidal bases.</p>
+<p>This includes confounded power measurements (due to harmonics), spurious phase-amplitude coupling (PAC), and biased filter outputs.</p>
+</div>
+<div class="section" id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h2>
+<p>Waveform shape can and should be explicitly checked and measured.</p>
+</div>
+<div class="section" id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">¶</a></h2>
+<p>Core citations / links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1016/j.conb.2016.06.010">When brain rhythms aren’t ‘rhythmic’: implication for their mechanisms and meaning</a>, Jones, 2016</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1016/j.tics.2016.12.008">Brain Oscillations and the Importance of Waveform Shape</a>, Cole &amp; Voytek, 2017</p></li>
+</ul>
+</div>
+<div class="section" id="related-discussion-examples">
+<h2>Related Discussion / Examples<a class="headerlink" href="#related-discussion-examples" title="Permalink to this headline">¶</a></h2>
+<p>This example uses the <a class="reference external" href="https://bycycle-tools.github.io/">ByCycle</a> module for measuring cycle-by-cycle variation.</p>
+<ul class="simple">
+<li><p>Tutorials on the ByCycle approach are available <a class="reference external" href="https://bycycle-tools.github.io/bycycle/auto_tutorials/index.html">here</a></p></li>
+<li><p>A relevant example on the interaction of shape and PAC is <a class="reference external" href="https://bycycle-tools.github.io/bycycle/auto_examples/plot_3_pac_feature_distributions.html">here</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">fooof.plts.spectra</span> <span class="kn">import</span> <span class="n">plot_spectra</span><span class="p">,</span> <span class="n">plot_spectrum_shading</span>
+<span class="kn">from</span> <span class="nn">fooof.utils</span> <span class="kn">import</span> <span class="n">trim_spectrum</span>
+
+<span class="kn">from</span> <span class="nn">neurodsp.filt</span> <span class="kn">import</span> <span class="n">filter_signal</span>
+<span class="kn">from</span> <span class="nn">neurodsp.spectral</span> <span class="kn">import</span> <span class="n">compute_spectrum</span>
+<span class="kn">from</span> <span class="nn">neurodsp.plts.time_series</span> <span class="kn">import</span> <span class="n">plot_time_series</span>
+<span class="kn">from</span> <span class="nn">neurodsp.utils</span> <span class="kn">import</span> <span class="n">create_times</span><span class="p">,</span> <span class="n">set_random_seed</span>
+<span class="kn">from</span> <span class="nn">neurodsp.sim</span> <span class="kn">import</span> <span class="n">sim_oscillation</span><span class="p">,</span> <span class="n">sim_combined</span><span class="p">,</span> <span class="n">sim_powerlaw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import bycycle module, which is used for this example</span>
+<span class="kn">from</span> <span class="nn">bycycle.features</span> <span class="kn">import</span> <span class="n">compute_features</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add path and import custom code for the project</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">mu_wave</span><span class="p">,</span> <span class="n">compute_pac</span>
+<span class="kn">from</span> <span class="nn">plts</span> <span class="kn">import</span> <span class="p">(</span><span class="n">plot_waveforms</span><span class="p">,</span> <span class="n">plot_power_by_shape</span><span class="p">,</span> <span class="n">plot_harmonic_power</span><span class="p">,</span> 
+                  <span class="n">plot_pac</span><span class="p">,</span> <span class="n">plot_legend</span><span class="p">,</span> <span class="n">savefig</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">settings</span> <span class="kn">import</span> <span class="n">ALPHA_COLOR</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s1">&#39;talk&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set random seed</span>
+<span class="n">set_random_seed</span><span class="p">(</span><span class="mi">808</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the average function to use</span>
+<span class="n">avg_func</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define general simulation settings</span>
+<span class="n">n_seconds</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">create_times</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define parameters for the simulations</span>
+<span class="n">exp</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span>
+<span class="n">ap_filt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">cf</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">rdsym</span> <span class="o">=</span> <span class="mf">0.05</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define ranges of interest</span>
+<span class="n">psd_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">beta_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define range of values to use for oscillation asymmetry</span>
+<span class="n">rdsyms</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.625</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.875</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collect parameters and set up simulations</span>
+<span class="n">comps</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sim_powerlaw&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;exponent&#39;</span> <span class="p">:</span> <span class="n">exp</span><span class="p">,</span> <span class="s1">&#39;f_range&#39;</span> <span class="p">:</span> <span class="n">ap_filt</span><span class="p">},</span>
+         <span class="s1">&#39;sim_oscillation&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;freq&#39;</span> <span class="p">:</span> <span class="n">cf</span><span class="p">,</span> <span class="s1">&#39;cycle&#39;</span> <span class="p">:</span> <span class="s1">&#39;asine&#39;</span><span class="p">,</span> <span class="s1">&#39;rdsym&#39;</span> <span class="p">:</span> <span class="n">rdsym</span><span class="p">}}</span>
+
+<span class="c1"># Define relative power of the signal components</span>
+<span class="n">comp_vars</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot settings</span>
+<span class="n">plt_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;xlabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;ylabel&#39;</span> <span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]}</span>
+
+<span class="c1"># Define plot colors</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rdsyms</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">mu_color</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span>
+<span class="n">sinus_color</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span>
+<span class="n">harmonic_color</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mu_color</span><span class="p">,</span> <span class="n">sinus_color</span><span class="p">,</span> <span class="n">harmonic_color</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Burst detection settings for ByCycle</span>
+<span class="n">burst_detection_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;amplitude_fraction_threshold&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;amplitude_consistency_threshold&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;period_consistency_threshold&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;monotonicity_threshold&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set whether to save out figures</span>
+<span class="n">SAVE_FIG</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulate-time-series">
+<h2>Simulate Time Series<a class="headerlink" href="#simulate-time-series" title="Permalink to this headline">¶</a></h2>
+<p>First, let’s visualize an asymmetric oscillation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate an asymmetric oscillation</span>
+<span class="n">osc</span> <span class="o">=</span> <span class="n">sim_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="s1">&#39;asine&#39;</span><span class="p">,</span> <span class="n">rdsym</span><span class="o">=</span><span class="n">rdsym</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the asymmetric oscillation</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">osc</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-shape_osc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_18_0.png" src="../_images/05-WaveformShape_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate the combined time series</span>
+<span class="n">ap</span> <span class="o">=</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="n">exp</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">ap_filt</span><span class="p">,</span> <span class="n">variance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c1"># Create the combiend signal</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">osc</span> <span class="o">+</span> <span class="n">ap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the simulated time series</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">sig</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-ts_comb&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_20_0.png" src="../_images/05-WaveformShape_20_0.png" />
+</div>
+</div>
+<div class="section" id="computing-shape-features">
+<h3>Computing Shape Features<a class="headerlink" href="#computing-shape-features" title="Permalink to this headline">¶</a></h3>
+<p>To measure shape features, we will use the <a class="reference external" href="https://bycycle-tools.github.io/bycycle/">bycycle</a> toolbox.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute shape features of the simulated signal</span>
+<span class="n">df_shape</span> <span class="o">=</span> <span class="n">compute_features</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="p">(</span><span class="n">cf</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">cf</span> <span class="o">+</span><span class="mi">2</span> <span class="p">),</span>
+                            <span class="n">burst_detection_kwargs</span><span class="o">=</span><span class="n">burst_detection_kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check out some example features computed for the signal</span>
+<span class="n">df_shape</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_peak</th>
+      <th>sample_zerox_decay</th>
+      <th>sample_zerox_rise</th>
+      <th>sample_last_trough</th>
+      <th>sample_next_trough</th>
+      <th>period</th>
+      <th>time_peak</th>
+      <th>time_trough</th>
+      <th>volt_peak</th>
+      <th>volt_trough</th>
+      <th>...</th>
+      <th>volt_rise</th>
+      <th>volt_amp</th>
+      <th>time_rdsym</th>
+      <th>time_ptsym</th>
+      <th>band_amp</th>
+      <th>amp_fraction</th>
+      <th>amp_consistency</th>
+      <th>period_consistency</th>
+      <th>monotonicity</th>
+      <th>is_burst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>306</td>
+      <td>350</td>
+      <td>300</td>
+      <td>294</td>
+      <td>393</td>
+      <td>99</td>
+      <td>50</td>
+      <td>54</td>
+      <td>1.624848</td>
+      <td>-1.361975</td>
+      <td>...</td>
+      <td>2.986823</td>
+      <td>2.971948</td>
+      <td>0.121212</td>
+      <td>0.480769</td>
+      <td>1.259020</td>
+      <td>0.248980</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.866279</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>414</td>
+      <td>449</td>
+      <td>400</td>
+      <td>393</td>
+      <td>481</td>
+      <td>88</td>
+      <td>49</td>
+      <td>50</td>
+      <td>1.904694</td>
+      <td>-1.332224</td>
+      <td>...</td>
+      <td>3.236918</td>
+      <td>3.251017</td>
+      <td>0.238636</td>
+      <td>0.494949</td>
+      <td>1.338579</td>
+      <td>0.624490</td>
+      <td>0.888784</td>
+      <td>0.814815</td>
+      <td>0.801515</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>503</td>
+      <td>552</td>
+      <td>499</td>
+      <td>481</td>
+      <td>589</td>
+      <td>108</td>
+      <td>53</td>
+      <td>50</td>
+      <td>1.541561</td>
+      <td>-1.360423</td>
+      <td>...</td>
+      <td>2.901983</td>
+      <td>3.150959</td>
+      <td>0.203704</td>
+      <td>0.514563</td>
+      <td>1.184661</td>
+      <td>0.485714</td>
+      <td>0.853541</td>
+      <td>0.814815</td>
+      <td>0.686275</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>608</td>
+      <td>666</td>
+      <td>599</td>
+      <td>589</td>
+      <td>697</td>
+      <td>108</td>
+      <td>67</td>
+      <td>47</td>
+      <td>1.387864</td>
+      <td>-1.858374</td>
+      <td>...</td>
+      <td>3.246239</td>
+      <td>3.256740</td>
+      <td>0.175926</td>
+      <td>0.587719</td>
+      <td>1.121370</td>
+      <td>0.640816</td>
+      <td>0.869941</td>
+      <td>0.861111</td>
+      <td>0.741793</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>711</td>
+      <td>753</td>
+      <td>700</td>
+      <td>697</td>
+      <td>790</td>
+      <td>93</td>
+      <td>53</td>
+      <td>34</td>
+      <td>1.876328</td>
+      <td>-1.879377</td>
+      <td>...</td>
+      <td>3.755705</td>
+      <td>3.816923</td>
+      <td>0.150538</td>
+      <td>0.609195</td>
+      <td>1.181158</td>
+      <td>0.983673</td>
+      <td>0.869941</td>
+      <td>0.861111</td>
+      <td>0.814103</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="filter-time-series">
+<h3>Filter Time Series<a class="headerlink" href="#filter-time-series" title="Permalink to this headline">¶</a></h3>
+<p>Next, let’s explore filtering our simulated signal.</p>
+<p>With the filtering we want to pay particular attention to how narrowband filters distort the shape of asymmetric oscillations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter the signal, including a broadband filter, and the alpha range</span>
+<span class="n">sig_filt_al</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">)</span>
+
+<span class="c1"># Plot the alpha filtered signal, compared to the original signal</span>
+<span class="n">plot_time_series</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="p">[</span><span class="n">sig</span><span class="p">,</span> <span class="n">sig_filt_al</span><span class="p">],</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">],</span> <span class="o">**</span><span class="n">plt_kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-ts_filt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_25_0.png" src="../_images/05-WaveformShape_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute and plot the power spectrum of the signal</span>
+<span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="o">*</span><span class="n">compute_spectrum</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">fs</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">))</span>
+<span class="n">plot_spectrum_shading</span><span class="p">(</span><span class="n">freqs1</span><span class="p">,</span> <span class="n">powers1</span><span class="p">,</span> <span class="n">ALPHA_RANGE</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+                      <span class="n">log_freqs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_powers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                      <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">shade_colors</span><span class="o">=</span><span class="n">ALPHA_COLOR</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-psd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_26_0.png" src="../_images/05-WaveformShape_26_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulate-across-waveform-shapes">
+<h2>Simulate Across Waveform Shapes<a class="headerlink" href="#simulate-across-waveform-shapes" title="Permalink to this headline">¶</a></h2>
+<p>In the next set of simulations, we will create time series across variations of waveform shape.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate a collections of oscillations across variable waveforms shapes</span>
+<span class="n">oscs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">rdsym</span> <span class="ow">in</span> <span class="n">rdsyms</span><span class="p">:</span>
+    <span class="n">oscs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sim_oscillation</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">cycle</span><span class="o">=</span><span class="s2">&quot;asine&quot;</span><span class="p">,</span> <span class="n">rdsym</span><span class="o">=</span><span class="n">rdsym</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the waveforms, comparing to filtered versions, to see how peak positions change</span>
+<span class="n">plot_waveforms</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">oscs</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">burst_detection_kwargs</span><span class="p">,</span> <span class="n">cmap</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;05-ts_waveforms&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_29_0.png" src="../_images/05-WaveformShape_29_0.png" />
+</div>
+</div>
+<div class="section" id="compute-power-spectra">
+<h3>Compute Power Spectra<a class="headerlink" href="#compute-power-spectra" title="Permalink to this headline">¶</a></h3>
+<p>Next, let’s compute the power spectrum of the simulated signals.</p>
+<p>In the power spectrum, we will be paying attention to harmonics that arise due to the asymmetric oscillation.</p>
+<p>Note how, in the following plot, there are are clear harmonics in the beta range.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an aperiodic component to add to signals</span>
+<span class="n">ap</span> <span class="o">=</span> <span class="n">sim_powerlaw</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=-</span><span class="mf">2.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute power spectra for each signal, adding an aperiodic component</span>
+<span class="n">all_pows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">osc</span> <span class="ow">in</span> <span class="n">oscs</span><span class="p">:</span>
+    <span class="n">cur_freqs</span><span class="p">,</span> <span class="n">cur_pows</span> <span class="o">=</span> <span class="n">compute_spectrum</span><span class="p">(</span><span class="n">osc</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">ap</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">fs</span><span class="p">)</span>
+    <span class="n">all_pows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_pows</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Restrict power specra to range of interest</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">psd</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="n">cur_freqs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_pows</span><span class="p">),</span> <span class="n">psd_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot spectra</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">ax_psd</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">ax_psd</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">psd</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax_psd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;frequency [Hz]&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">35</span><span class="p">),</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;log PSD&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax_psd</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-psd_waveforms&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_34_0.png" src="../_images/05-WaveformShape_34_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="compare-across-asymmetry-values">
+<h3>Compare across asymmetry values<a class="headerlink" href="#compare-across-asymmetry-values" title="Permalink to this headline">¶</a></h3>
+<p>Next, let’s extend the analysis, and simulate signals across different oscillation asymmetries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Settings for current simulations</span>
+<span class="n">n_trials</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">rdsyms_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">)</span>
+<span class="n">beta_pows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">rdsyms_all</span><span class="p">),</span> <span class="n">n_trials</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate for a number of trials</span>
+<span class="k">for</span> <span class="n">i_rdsym</span><span class="p">,</span> <span class="n">cur_rdsym</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rdsyms_all</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i_trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_trials</span><span class="p">):</span>
+
+        <span class="c1"># Create the signal</span>
+        <span class="n">comps</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;sim_powerlaw&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;exponent&quot;</span><span class="p">:</span> <span class="n">exp</span><span class="p">,</span> <span class="s2">&quot;f_range&quot;</span><span class="p">:</span> <span class="n">ap_filt</span><span class="p">},</span>
+                 <span class="s2">&quot;sim_oscillation&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;freq&quot;</span><span class="p">:</span> <span class="n">cf</span><span class="p">,</span> <span class="s2">&quot;cycle&quot;</span><span class="p">:</span> <span class="s2">&quot;asine&quot;</span><span class="p">,</span> <span class="s2">&quot;rdsym&quot;</span><span class="p">:</span> <span class="n">cur_rdsym</span><span class="p">}}</span>
+        <span class="n">cur_sig</span> <span class="o">=</span> <span class="n">sim_combined</span><span class="p">(</span><span class="n">n_seconds</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">comps</span><span class="p">,</span> <span class="n">comp_vars</span><span class="p">)</span>
+
+        <span class="c1"># Compute the spectrum and collect the measured beta power</span>
+        <span class="n">cur_freqs</span><span class="p">,</span> <span class="n">cur_pows</span> <span class="o">=</span> <span class="n">compute_spectrum</span><span class="p">(</span><span class="n">cur_sig</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">beta_pow</span> <span class="o">=</span> <span class="n">trim_spectrum</span><span class="p">(</span><span class="n">cur_freqs</span><span class="p">,</span> <span class="n">cur_pows</span><span class="p">,</span> <span class="n">beta_range</span><span class="p">)</span>
+        <span class="n">beta_pow</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">beta_pow</span><span class="p">)</span>
+        <span class="n">beta_pows</span><span class="p">[</span><span class="n">i_rdsym</span><span class="p">,</span> <span class="n">i_trial</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta_pow</span>
+
+<span class="n">mean_beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">beta_pows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">std_beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">beta_pows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the measured beta power across waveform shape</span>
+<span class="n">plot_power_by_shape</span><span class="p">(</span><span class="n">rdsyms_all</span><span class="p">,</span> <span class="n">mean_beta</span><span class="p">,</span> <span class="n">std_beta</span><span class="p">,</span> <span class="n">rdsyms</span><span class="p">,</span> <span class="n">cmap</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-power_by_shape&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_38_0.png" src="../_images/05-WaveformShape_38_0.png" />
+</div>
+</div>
+<p>In the above, we can see that the the measured beta power tracks the waveform shape of the simulated oscillation.</p>
+<p>Keep in mind this is relating measured <em>beta</em> power to the shape of an <em>alpha</em> oscillation.</p>
+<p>In this simulation, there is no actual beta power. This shows spurious power, due to the harmonics.</p>
+</div>
+<div class="section" id="compute-phase-amplitude-coupling">
+<h3>Compute Phase-Amplitude Coupling<a class="headerlink" href="#compute-phase-amplitude-coupling" title="Permalink to this headline">¶</a></h3>
+<p>Finally, let’s examine phase-amplitude coupling.</p>
+<p>Phase-amplitude coupling is an analysis to investigate coupling between multiple, distinct oscillations.</p>
+<p>Note that in our example signal, there is only one oscillation, and so there can be no true coupling between multiple periodic components.</p>
+<p>Despite this, non-sinusoidal rhythms can induce artifactual phase-amplitude coupling.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define time vector for these simulations</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">)</span>
+
+<span class="c1"># Simulate signals</span>
+<span class="n">signal_alpha</span><span class="p">,</span> <span class="n">signal_beta</span> <span class="o">=</span> <span class="n">mu_wave</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cf</span><span class="p">,</span> <span class="n">comb</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">signal_mu</span> <span class="o">=</span> <span class="n">signal_alpha</span> <span class="o">+</span> <span class="n">signal_beta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter signals to ranges of interest</span>
+<span class="n">filt_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">signal_mu_filt</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">signal_mu</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s2">&quot;bandpass&quot;</span><span class="p">,</span>
+                               <span class="n">filt_range</span><span class="p">,</span> <span class="n">remove_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">signal_beta_filt</span> <span class="o">=</span> <span class="n">filter_signal</span><span class="p">(</span><span class="n">signal_beta</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="s2">&quot;bandpass&quot;</span><span class="p">,</span>
+                                 <span class="n">filt_range</span><span class="p">,</span> <span class="n">remove_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the time series and filtered traces</span>
+<span class="n">plot_harmonic_power</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">signal_mu</span><span class="p">,</span> <span class="n">signal_beta</span><span class="p">,</span> <span class="n">signal_mu_filt</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-pac_harmonic_power&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_43_0.png" src="../_images/05-WaveformShape_43_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute power spectra for different signal components</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">spec_mu</span> <span class="o">=</span> <span class="n">compute_spectrum</span><span class="p">(</span><span class="n">signal_mu</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">psd_range</span><span class="p">)</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">spec_beta</span> <span class="o">=</span> <span class="n">compute_spectrum</span><span class="p">(</span><span class="n">signal_beta</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">psd_range</span><span class="p">)</span>
+<span class="n">freqs</span><span class="p">,</span> <span class="n">spec_mu_filt</span> <span class="o">=</span> <span class="n">compute_spectrum</span><span class="p">(</span><span class="n">signal_mu_filt</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">f_range</span><span class="o">=</span><span class="n">psd_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a spectrum of the different signal components</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">axins</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">axins</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">spec_mu</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">mu_color</span><span class="p">)</span>
+<span class="n">axins</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">spec_beta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">sinus_color</span><span class="p">)</span>
+<span class="n">axins</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">spec_mu_filt</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">harmonic_color</span><span class="p">)</span>
+<span class="n">axins</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">psd_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span> <span class="n">yticks</span><span class="o">=</span><span class="p">[]);</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-pac_psd_inset&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_45_0.png" src="../_images/05-WaveformShape_45_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute phase amplitude coupling</span>
+<span class="n">bins</span><span class="p">,</span> <span class="n">pac</span> <span class="o">=</span> <span class="n">compute_pac</span><span class="p">(</span><span class="n">signal_mu_filt</span><span class="p">,</span> <span class="n">signal_beta_filt</span><span class="p">,</span> <span class="n">signal_alpha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the calculate phase-amplitude coupling</span>
+<span class="n">plot_pac</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">pac</span><span class="p">,</span> <span class="p">[</span><span class="n">harmonic_color</span><span class="p">,</span> <span class="n">sinus_color</span><span class="p">])</span>
+<span class="n">savefig</span><span class="p">(</span><span class="n">SAVE_FIG</span><span class="p">,</span> <span class="s1">&#39;05-pac_coupling&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05-WaveformShape_47_0.png" src="../_images/05-WaveformShape_47_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<p>Many of the methods that are commonly used assume sinusoidality.</p>
+<p>This can be an issue, as the observed oscillations in neural data are often non-sinusoidal.</p>
+<p>As we’ve explored here, non-sinusoidal oscillations can induce spurious or biased measures of power, phase-amplitude coupling, and filter outputs.</p>
+<p>These issues can be addressed by explicitly measuring waveform shape, both as a measure of interest itself, and to check whether waveform shape measures may explain any other measured changes.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="04-TemporalFluctuations.html" title="previous page">Temporal Fluctuations</a>
+    <a class='right-next' id="next-link" href="06-SpatialSeparation.html" title="next page">Separation of Rhythms</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue, Natalie Schaworonkow, Bradley Voytek<br/>
+        
+            &copy; Copyright 2021-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
