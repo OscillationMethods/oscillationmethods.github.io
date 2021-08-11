@@ -82,6 +82,18 @@
     <div class="bd-toc-item active">
         <p class="caption">
  <span class="caption-text">
+  Visualizers
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../docs/viz.html">
+   Animated Visualizers
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Notebooks
  </span>
 </p>
@@ -681,6 +693,15 @@ to detect peaks in the power spectrum.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the plot color for the shaded peak to be the alpha color</span>
+<span class="kn">from</span> <span class="nn">fooof.plts.settings</span> <span class="kn">import</span> <span class="n">PLT_COLORS</span>
+<span class="n">PLT_COLORS</span><span class="p">[</span><span class="s1">&#39;periodic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shade_colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the power spectrum, with the model, highlighting the detected peak</span>
 <span class="n">plot_annotated_model</span><span class="p">(</span><span class="n">fm</span><span class="p">,</span> <span class="n">annotate_peaks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">annotate_aperiodic</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
@@ -691,7 +712,7 @@ to detect peaks in the power spectrum.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01-OscillationPresence_37_0.png" src="../_images/01-OscillationPresence_37_0.png" />
+<img alt="../_images/01-OscillationPresence_38_0.png" src="../_images/01-OscillationPresence_38_0.png" />
 </div>
 </div>
 <p>Having detected a peak, we can restrict our analyses to frequency bands with verified oscillations.</p>
@@ -709,7 +730,7 @@ to detect peaks in the power spectrum.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01-OscillationPresence_39_0.png" src="../_images/01-OscillationPresence_39_0.png" />
+<img alt="../_images/01-OscillationPresence_40_0.png" src="../_images/01-OscillationPresence_40_0.png" />
 </div>
 </div>
 </div>

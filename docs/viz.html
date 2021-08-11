@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Visualizers &#8212; Oscillation Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="../notebooks/00-Introduction.html" />
+    <link rel="prev" title="Oscillation Project" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Oscillation Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Visualizers
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/00-Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/01-OscillationPresence.html">
+   Oscillation Presence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/02-BandDefinitions.html">
+   Band Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/03-AperiodicActivity.html">
+   Aperiodic Activity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/04-TemporalFluctuations.html">
+   Temporal Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05-WaveformShape.html">
+   Waveform Shape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06-SpatialSeparation.html">
+   Separation of Rhythms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07-PowerConfounds.html">
+   Signal to Noise Ratio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/viz.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intro-oscillation-visualizers">
+   Intro: Oscillation Visualizers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oscillation-presence">
+   #1 Oscillation Presence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#center-frequency">
+   #2 Center Frequency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aperiodic-activity">
+   #3 Aperiodic Activity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temporal-variability">
+   #4 Temporal Variability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#waveform-shape">
+   #5 Waveform Shape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overlapping-sources">
+   #6 Overlapping Sources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#signal-to-noise-ratio">
+   #7 Signal-to-noise ratio
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="animated-visualizers">
+<h1>Animated Visualizers<a class="headerlink" href="#animated-visualizers" title="Permalink to this headline">¶</a></h1>
+<p>This page contains animated visualizations for the OscillationMethods project, stepping through each of the 7 topics.</p>
+<p>The code to create these visualizations is openly available
+<a class="reference external" href="https://github.com/OscillationMethods/Visualizers">here</a>.
+If you wish to use any of these visualizations, please cite the Oscillation Methods
+<a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1111/ejn.15361">paper</a>.</p>
+<div class="section" id="intro-oscillation-visualizers">
+<h2>Intro: Oscillation Visualizers<a class="headerlink" href="#intro-oscillation-visualizers" title="Permalink to this headline">¶</a></h2>
+<p>In this page, we will use a series of animated visualizers to demonstrate what we think are some important methodological considerations, organized into 7 key topics or recommended “checks”. These figures are created with simulated data in order to demonstrate particular topics of interest when examining oscillations.</p>
+<p><img alt="fig0" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig0.gif" /></p>
+<p>In the visualization above, a simulated neural signal, containing both an oscillation and an aperiodic component (black) is shown, along with the corresponding power spectrum to the right, and below, the filtered signal (blue) and instantaneous amplitude (red).</p>
+</div>
+<div class="section" id="oscillation-presence">
+<h2>#1 Oscillation Presence<a class="headerlink" href="#oscillation-presence" title="Permalink to this headline">¶</a></h2>
+<p>The first recommendation is to start by detecting neural oscillations!</p>
+<p>Neural oscillations are not always present. Measures, such as narrowband filters can give results that appear oscillatory, but actually reflect non-oscillatory (‘aperiodic’) aspects of the data.</p>
+<p><img alt="fig1" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig1.gif" /></p>
+<p>In the visualization above, the simulated time series (top left; black) is purely aperiodic, as can also be seen in the power spectrum below. The shaded regions indicate canonical frequency bands (delta - yellow; theta - green; alpha - blue; beta - purple). To the right, is the filtered signal, in canonical frequency ranges. Note that despite being simulated with no rhythmic activity, the filtered signals appear to be rhythmic.</p>
+</div>
+<div class="section" id="center-frequency">
+<h2>#2 Center Frequency<a class="headerlink" href="#center-frequency" title="Permalink to this headline">¶</a></h2>
+<p>The second recommendation is to examine defined frequency bands to evaluate if they match the data!</p>
+<p>Oscillation frequencies can be idiosyncratic, meaning predefined band ranges (ex. alpha: 8-12) may lead to misestimations of power and/or lead to power “bleeding” into adjacent frequency bands.</p>
+<p><img alt="fig2" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig2.gif" /></p>
+<p>In the visualization above, two example signals are shown, one with a canonical alpha signal (blue - 10 Hz), and another with a variable alpha center frequency (green). As can be seen in the filtered traces, and band power measures, variance in center frequency can affect measures of band power.</p>
+</div>
+<div class="section" id="aperiodic-activity">
+<h2>#3 Aperiodic Activity<a class="headerlink" href="#aperiodic-activity" title="Permalink to this headline">¶</a></h2>
+<p>The third recommendation is to examine if aperiodic activity is contributing to and/or may explain measure changes!</p>
+<p>Neural activity also contains dynamic aperiodic (1/f-like) activity, which can influence band power measures &amp; relative power. Because of dynamic aperiodic activity, one may need to control for changes in non-oscillatory activity!</p>
+<p><img alt="fig3" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig3.gif" /></p>
+<p>In the visualization above, two signals (power spectra are compared), in which one is ‘spectrally rotated’, reflecting a difference in the aperiodic component of the signal.</p>
+</div>
+<div class="section" id="temporal-variability">
+<h2>#4 Temporal Variability<a class="headerlink" href="#temporal-variability" title="Permalink to this headline">¶</a></h2>
+<p>The fourth recommendation is to consider temporal variability (burstiness), including, for example, using burst detection to see if burstiness might impact measures / explain differences in measures of interest.</p>
+<p>Oscillations are temporally variable, which can influence measures in ways that can be misinterpreted as changes in (continuous) power.</p>
+<p><img alt="fig4" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig4.gif" /></p>
+<p>In the visualization above, different temporal properties of the signal are shown, each which reflect the same difference in power in the alpha band, arising from differences in burst features. These differences include true difference in the amount of the power of the oscillation, differences in burst duration (how many cycles a burst lasts), and differences in burst occurrence (how often a burst happens).</p>
+</div>
+<div class="section" id="waveform-shape">
+<h2>#5 Waveform Shape<a class="headerlink" href="#waveform-shape" title="Permalink to this headline">¶</a></h2>
+<p>The fifth recommendation is to examine waveform shape, to evaluate if and how any non-sinusoidalities may be influencing measures of interest.</p>
+<p>Oscillations are often non-sinusoidal which, in Fourier based measures, leads to “harmonics” and influences measures like phase-amplitude coupling.</p>
+<p><img alt="fig5" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig5.gif" /></p>
+<p>In the visualization above, two signals are compared, one being a pure sinusoid (black), and another with variable waveform shape properties (green). In the power spectrum (right) and the band power measures, we can see that the waveform shape create harmonics that lead to measured beta beta. In addition, this harmonic power leads to measured phase-amplitude coupling (PAC) between alpha and higher frequencies, despite there only being one rhythmic component in the signal.</p>
+</div>
+<div class="section" id="overlapping-sources">
+<h2>#6 Overlapping Sources<a class="headerlink" href="#overlapping-sources" title="Permalink to this headline">¶</a></h2>
+<p>The sixth recommendation is to address overlapping sources, by using source separation to check for and isolate components.</p>
+<p>Electrodes often can record multiple overlapping sources, wherein differences in frequency and/or phase of distinct sources can influence the measured surface potential.</p>
+<p><img alt="fig6" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig6.gif" /></p>
+<p>In the visualization above, two sources (red and blue) are simulated, and measured as an overlying electrode (green). Note that the simulated signals are non-sinusoidal, and thus have harmonic peaks. Represented is cases in which the two sources have variable frequency or variable phase, and how these lead to different recordings at the overlying electrode.</p>
+</div>
+<div class="section" id="signal-to-noise-ratio">
+<h2>#7 Signal-to-noise ratio<a class="headerlink" href="#signal-to-noise-ratio" title="Permalink to this headline">¶</a></h2>
+<p>The seventh recommendation is to check the signal-to-noise ratio (SNR) to evaluate if there is sufficient SNR for computing measures of interest.</p>
+<p>As oscillatory power decreases, estimates get noisier, which can lead to misestimations and potentially precludes clear interpretation of derived measures.</p>
+<p><img alt="fig7" src="https://raw.githubusercontent.com/OscillationMethods/Visualizers/main/gifs/fig7.gif" /></p>
+<p>In the visualization above, a signal with variable oscillation power (SNR) is simulated, with representations of the power spectrum, raw time series, filtered time series, and instantaneous phase and frequency. Note that the simulated oscillation is consistently present in all cases - variability of the measures is due to noisy estimates when the signal power is low.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Oscillation Project</a>
+    <a class='right-next' id="next-link" href="../notebooks/00-Introduction.html" title="next page">Introduction</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Thomas Donoghue, Natalie Schaworonkow, Bradley Voytek<br/>
+        
+            &copy; Copyright 2021-.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
