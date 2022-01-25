@@ -267,13 +267,12 @@
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>This project is an overview of <em>methodological considerations</em> for measuring and investigating neural oscillations.</p>
-<p>This project is broadly a review of methodological topics, and largely focuses on relationships between data properties and methods assumptions.</p>
-<p>The project is organized into seven key topics.</p>
-<p>Each topic includes a description of the issue, example demonstrations, and notes on how to avoid the issue. Each topic was chosen to reflect a general considerations that is broadly relevant to at least many investigations of neural oscillations. This project aims to collect together discussion of these considerations, though many of these topics have been been discussed in the literature before, and we also link out to other work that has highlighted, demonstrated, and discussed the topic at hand.</p>
+<p>In practice, this project is a review of methodological topics, with a focus on evaluating relationships between data properties and methods assumptions.</p>
+<p>The project is organized into seven key topics. Each topic includes a description of the issue, example demonstrations, and notes on how to avoid the issue. Each topic was chosen to reflect a general consideration that is broadly relevant investigating neural oscillations.</p>
+<p>Overvall, this project aims to give an overview of and collect together discussion of these considerations. Many of these topics have been been discussed in the literature before, and links to other work that has highlighted, demonstrated, and discussed the topic at hand is also included.</p>
 <div class="section" id="organization-of-the-project">
 <h2>Organization of the Project<a class="headerlink" href="#organization-of-the-project" title="Permalink to this headline">¶</a></h2>
 <p>Each topic is covered in a dedicated notebook, that introduces the problem and demonstrates some examples.</p>
-<p>To do so, we use simulated data and common analysis tools to explore and demonstrate potential methodological limitations.</p>
 <p>The methodological considerations covered in this project are:</p>
 <ul class="simple">
 <li><p>#1) detecting oscillations</p></li>
@@ -284,16 +283,17 @@
 <li><p>#6) overlapping sources</p></li>
 <li><p>#7) signal-to-noise ratio</p></li>
 </ul>
+<p>To investiate each of topics, we use simulated data and common analysis tools to explore and demonstrate potential methodological limitations.</p>
 <div class="section" id="simulations">
 <h3>Simulations<a class="headerlink" href="#simulations" title="Permalink to this headline">¶</a></h3>
-<p>Each topic is demonstrated using simulated data. We use simulated data as it allows for precise control over properties of the data, and the capacity to isolate and demonstrate individual features of the data, and topics of interest.</p>
-<p>The simulations take the approach of creating neural time series as combinations of periodic and aperiodic activity.</p>
-<p>All simulations are simulated are created with the
-<a class="reference external" href="https://neurodsp-tools.github.io/">neurodsp</a> toolbox.</p>
+<p>Each topic is demonstrated using simulated data. Simulated data allows for precise control over properties of the data, and the capacity to isolate and demonstrate individual features of the data, and topics of interest.</p>
+<p>The simulations are created with the
+<a class="reference external" href="https://neurodsp-tools.github.io/">neurodsp</a> toolbox, which simulates
+neural time series as combinations of periodic and aperiodic activity.</p>
 </div>
 <div class="section" id="analysis-tools">
 <h3>Analysis Tools<a class="headerlink" href="#analysis-tools" title="Permalink to this headline">¶</a></h3>
-<p>Throughout this project, we use open-source Python toolboxes, including common modules from the scientific Python ecosystem, including numpy, scipy, matplotlib, seaborn, etc.</p>
+<p>Throughout this project, we use open-source Python toolboxes. This includes common modules from the scientific Python ecosystem, including numpy, scipy, matplotlib, seaborn, etc.</p>
 <p>Simulations &amp; analyses are done with NeuroDSP, a Python tool for digital signal processing of neural time series:</p>
 <ul class="simple">
 <li><p>Neural Digital Signal Processing (NeuroDSP)</p>
@@ -303,12 +303,12 @@
 </ul>
 </li>
 </ul>
-<p>Some of the analyses additional use specialized tools for particular analyses:</p>
+<p>Some analyses also use specialized tools for particular analyses, including:</p>
 <ul class="simple">
-<li><p>Parameterizing Neural Power Spectra</p>
+<li><p>Spectral Parameterization (specparam)</p>
 <ul>
 <li><p>Tool link: <a class="reference external" href="https://fooof-tools.github.io/">https://fooof-tools.github.io/</a></p></li>
-<li><p>Reference paper: <a class="reference external" href="https://doi.org/10.1101/299859">https://doi.org/10.1101/299859</a></p></li>
+<li><p>Reference paper: <a class="reference external" href="https://doi.org/10.1038/s41593-020-00744-x">https://doi.org/10.1038/s41593-020-00744-x</a></p></li>
 </ul>
 </li>
 <li><p>Cycle-by-Cycle Analyses (ByCycle)</p>
