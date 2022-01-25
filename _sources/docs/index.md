@@ -1,6 +1,14 @@
-# Oscillation Project
+# Oscillation Methods Project
 
-Welcome to the Oscillation Methods project website! This website hosts an online version of the code and figures for the
+Welcome to the Oscillation Methods project website!
+
+```{image} https://raw.githubusercontent.com/OscillationMethods/Site/main/oscmethods/assets/OscillationsOverview.png
+:alt: overview
+:width: 500px
+:align: center
+```
+
+This website hosts an online version of the code and figures for the
 ["methodological considerations for studying neural oscillations"](https://onlinelibrary.wiley.com/doi/10.1111/ejn.15361)
 project, in which we review methods & concepts related to measuring & interpreting oscillatory neural activity.
 
@@ -23,7 +31,7 @@ This website hosts two complementary ways to explore the topics, including an ov
 
 This project is described in the following paper:
 
-    Donoghue T, Schaworonkow N, & Voytek B. Methodological considerations for
+    Donoghue T, Schaworonkow N, & Voytek B (2021). Methodological considerations for
     studying neural oscillations. European Journal of Neuroscience. DOI: 10.1111/ejn.15361
 
 Direct link: https://onlinelibrary.wiley.com/doi/10.1111/ejn.15361
